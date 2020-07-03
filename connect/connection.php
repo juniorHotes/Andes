@@ -6,8 +6,8 @@
     $db = 'andes';
 
     $connect = mysqli_connect($serve, $user, $passworld, $db);
-
+    
     if(mysqli_connect_errno()) {
-        die("Falha na conexão com o banco de dados" . mysqli_connect_errno());
-    }
+        die("Falha na conexão com o banco de dados: " . mysqli_connect_errno());
+    } 
 ?>
