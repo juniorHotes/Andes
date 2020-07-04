@@ -2,16 +2,21 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'MuseoModerno', cursive;
+    color: #696969;
+}
+body {
+    background: #f7f7f7;
 }
 header {
     width: 100%;
     height: 90px;
-    background: rgb(190, 126, 62);
+    background: #834b02; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
+    z-index: 2;
 }
 header h1 {
     color: white;
@@ -42,10 +47,41 @@ main ul {
 main ul li {
     width: 360px;
     height: 110px;
-    border: 1px solid #ddd;
     margin: 6px; 
     padding: 10px 20px;
+    background-color: white;
+    position: relative;
     cursor: pointer;
+}
+main ul li a.buy {
+    padding: 5px;
+    background-color: darkseagreen;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: white;
+    border-radius: 4px;
+    transition: 5ms;
+}
+main ul li a.buy:hover {
+    background-color: #78ac78;
+}
+main ul li a {
+    text-decoration: none;
+}
+main ul li h3 {
+    margin: 8px 0;
+    font-size: 16px;
+    line-height: 18px;
+}
+main ul li span {
+    font-size: 18px;
+    position: absolute;
+    bottom: 10px;
+}
+main ul li img {
+    float: left; 
+    margin-right:22px;
 }
 footer {
     width: 100%;

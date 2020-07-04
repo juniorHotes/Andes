@@ -29,9 +29,14 @@
                 while($pr = mysqli_fetch_assoc($query)) {
             ?>
                 <li>
-                    <img style="float: left; margin-right:22px;" src="<?php echo $pr["imagempequena"] ?>" alt="imagem do produto">
-                    <h3><?php echo $pr["nomeproduto"] ?></h3>
-                    <h3><?php echo "R$ " . $pr["precounitario"] ?></h3>
+                    <a href="productID=" value="<?php echo $pr["produtoID"] ?>">
+                        <img width="80" src="<?php echo $pr["imagempequena"] ?>" alt="imagem do produto">
+                        <h3><?php echo $pr["nomeproduto"] ?></h3>
+                        <span><?php echo "R$ " . $pr["precounitario"] ?></span>
+                    </a>
+                    <a class="buy" href="productID=" value="<?php echo $pr["produtoID"] ?>">
+                        COMPRAR
+                    </a>
                 </li>                    
             <?php } ?>
             </ul>
