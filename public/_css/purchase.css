@@ -1,0 +1,29 @@
+main {
+    margin: 100px  auto;
+    max-width: 1220px;
+    height: 100vh;
+    background-color: white;
+    padding: 20px;
+}
+#product-purchase {
+    margin: 20px;
+    display: flex;
+}
+#product-purchase ul {
+    margin-left: 20px;
+}
+#provider-details, table {
+    margin: 40px auto;
+    width: 100%;
+}
+#provider-details table, caption, th, tr, td{
+    border: 1px solid #a6e991;
+    border-collapse: collapse;
+    text-align: center;
+}
+#provider-details caption {
+    background-color: #d8ff8a;
+} 
+#provider-details th {
+    background-color: #dbdbdb;
+} 

@@ -8,9 +8,9 @@
         Header('location: index.php');
     }
     
-    $products = "SELECT * FROM produtos WHERE produtoID = {$productID}";
+    $product = "SELECT * FROM produtos WHERE produtoID = {$productID}";
 
-    $query = mysqli_query($connect, $products);
+    $query = mysqli_query($connect, $product);
 
     $details = mysqli_fetch_assoc($query);
 
@@ -40,11 +40,11 @@
                     <div id="details">
                         <h2><?php echo $details['nomeproduto']; ?></h2>
                         <h4><?php echo $details['descricao']; ?></h4>
-                        <p><?php echo $details['estoque'] . " Únidades disponíveis"; ?></p>
+                        <p><?php echo $details['estoque'] . " Available units"; ?></p>
                         <span><?php echo "R$ " . number_format($details['precounitario'], 2,",",".") ?></span>
                     </div>
-                    <a class="buy" href="buy.php?product_Id=<?php echo $pr["produtoID"] ?>">
-                        COMPRAR
+                    <a class="buy" href="buy.php?product_Id=<?php echo $productID ?>">
+                        Purchase
                     </a>
                 </ul>
             </div>
