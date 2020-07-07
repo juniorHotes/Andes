@@ -43,7 +43,7 @@
                         <p><?php echo $details['estoque'] . " Únidades disponíveis"; ?></p>
                         <span><?php echo "R$ " . number_format($details['precounitario'], 2,",",".") ?></span>
                     </div>
-                    <a class="buy" href="buy.php?product_Id=<?php echo $pr["produtoID"] ?>" target="_black">
+                    <a class="buy" href="buy.php?product_Id=<?php echo $pr["produtoID"] ?>">
                         COMPRAR
                     </a>
                 </ul>

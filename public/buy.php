@@ -2,8 +2,8 @@
     
     require_once("../connect/connection.php");
 
-    if(isset($_GET['product_Id'])) {
-        $productID = $_GET['product_Id'];
+    if(isset($_GET['_Id'])) {
+        $productID = $_GET['_Id'];
     } else {
         Header('location: index.php');
     }
