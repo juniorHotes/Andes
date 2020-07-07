@@ -36,7 +36,7 @@
                         <h3><?php echo $pr["nomeproduto"] ?></h3>
                         <span><?php echo "R$ " . number_format($pr["precounitario"], 2,",",".") ?></span>
                     </a>
-                    <a class="buy" href="buy.php?product_Id=<?php echo $pr["produtoID"] ?>">
+                    <a class="buy" href="purchase.php?product_Id=<?php echo $pr["produtoID"] ?>">
                         Purchase
                     </a>
                 </li>                    

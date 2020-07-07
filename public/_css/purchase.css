@@ -5,25 +5,28 @@ main {
     background-color: white;
     padding: 20px;
 }
-#product-purchase {
-    margin: 20px;
-    display: flex;
-}
-#product-purchase ul {
-    margin-left: 20px;
-}
-#provider-details, table {
-    margin: 40px auto;
+table {
+    margin: 10px auto;
     width: 100%;
 }
-#provider-details table, caption, th, tr, td{
-    border: 1px solid #a6e991;
+table, caption, th, tr, td{
+    border: 1px solid #d2cb8c;
     border-collapse: collapse;
-    text-align: center;
 }
-#provider-details caption {
-    background-color: #d8ff8a;
+caption, th, tr, td {
+    padding-left: 16px;
+}
+caption {
+    background-color: #d2cb8c;
 } 
-#provider-details th {
+th {
     background-color: #dbdbdb;
 } 
+table td.inputs {
+    text-align: right;
+}
+table td.inputs input {
+    outline: none;
+    width: 100px;
+    padding-left: 10px;
+}
