@@ -1,0 +1,30 @@
+main .login-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+main .login-window {
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    margin: 140px auto;
+    padding: 20px;
+}
+main .login-window form {
+    display: flex;
+    flex-direction: column;
+}
+main .login-window form input {
+    margin: 10px 0;
+    padding: 10px;
+}
+main .login-window form input[type=submit] {
+    border: none;
+    background: #834b02;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}

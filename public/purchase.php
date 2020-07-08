@@ -9,7 +9,6 @@
     $codigobarra    = $details['codigobarra'];
     $estoque        = $details['estoque'];
     $estoque        = $details['estoque'];
-    // $precounitario  = number_format($details['precounitario'], 2,",",".");
     $precounitario  = $details['precounitario'];
 
     $fornecedorID   = $_provider['fornecedorID'];
@@ -35,46 +34,53 @@
             <div id="product-purchase">
                 <table>
                     <caption>Purchase information</caption>
-
-                    <tr>
-                        <th colspan="4"><?php echo $nomecategoria ?></th>
-                    </tr>
-                    <tr>
-                        <td rowspan="6">1</td>
-                    </tr>
-
-                    <tr>
-                        <td rowspan="5">
-                            <img src="<?php echo $imagempequena ?>" alt="Imagem do produto">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <?php echo $nomeproduto ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <?php echo "Bar code: " . $codigobarra ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="600">
-                            <?php echo $estoque . " Available units"; ?>
-                        </td>
-                        <td class="inputs">Amount: 
-                            <input type="number" name="amount" id="" min="1" max="<?php echo $estoque ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo "R$ " . $precounitario . " - Unit price" ?>
-                        </td>
-                        <td class="inputs" id="total">
-                            <?php echo "Total: R$ " . $precounitario ?>
-                        </td>
-                    </tr>
-
+                    <?php
+                        $i = 0;
+                        while($i < 1) { 
+                    ?>
+                    <div id="product-details">
+                        <tr>
+                            <th colspan="4"><?php echo $nomecategoria ?></th>
+                        </tr>
+                        <tr>
+                            <td rowspan="6">1</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5">
+                                <img src="<?php echo $imagempequena ?>" alt="Imagem do produto">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <?php echo $nomeproduto ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <?php echo "Bar code: " . $codigobarra ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="600">
+                                <?php echo $estoque . " Available units"; ?>
+                            </td>
+                            <td class="inputs">Amount: 
+                                <input type="number" name="amount" value="1" min="1" max="<?php echo $estoque ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <?php echo "USD " . number_format($precounitario, 2,",",".") . " - Unit price" ?>
+                            </td>
+                            <td class="inputs" id="total">
+                                <?php echo "Total: USD " . number_format($precounitario, 2,",",".") ?>
+                            </td>
+                        </tr>
+                    </div>
+                    <?php
+                        $i++;
+                        } 
+                    ?>
                 </table>
             </div>
             <div id="provider-details">
@@ -100,20 +106,30 @@
         <?php require_once("partials/footer.php") ?>
     </body>
     <script>
-        const inputAmount = document.querySelector('input[name=amount]');
+        const inputAmount  = document.querySelector('input[name=amount]');
         const totalElement = document.querySelector('#total');
-        
+
         inputAmount.addEventListener('change', () => {
-            let total = <?php echo $precounitario; ?>;
-            const soma = inputAmount.value;
 
-            total *= soma;
-            totalElement.innerHTML = "";
-            totalElement.innerHTML += "Total: R$ " + total + ",00";
+        let precounitario = <?php echo $precounitario ?>;
+        let estoque = <?php echo $estoque ?>;
 
-            console.log(total);
+        let mult = inputAmount.value;
+
+        totalElement.innerHTML = "Total: USD ";
+
+        if(inputAmount.value > estoque) {
+
+            precounitario *= estoque;
+            totalElement.innerHTML += precounitario.toFixed(2).replace(".",",");
+            inputAmount.value = estoque;
+
+        } else {
+
+            precounitario *= mult;
+            totalElement.innerHTML += precounitario.toFixed(2).replace(".",",");
+        }
         });
-
     </script>
 </html>
 

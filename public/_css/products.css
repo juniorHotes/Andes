@@ -1,6 +1,6 @@
 main {
     max-width: 1150px;
-    margin: 16px auto;
+    margin: 0 auto;
 }
 main ul {
     display: grid;

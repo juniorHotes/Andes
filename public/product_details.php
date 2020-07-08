@@ -40,7 +40,7 @@
                         <h2><?php echo $details['nomeproduto']; ?></h2>
                         <h4><?php echo $details['descricao']; ?></h4>
                         <p><?php echo $details['estoque'] . " Available units"; ?></p>
-                        <span><?php echo "R$ " . number_format($details['precounitario'], 2,",",".") ?></span>
+                        <span><?php echo "USD " . number_format($details['precounitario'], 2,",",".") ?></span>
                     </div>
                     <a class="buy" href="purchase.php?product_Id=<?php echo $productID ?>">
                         Purchase
