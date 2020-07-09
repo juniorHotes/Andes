@@ -1,6 +1,9 @@
 <?php 
     
     require_once("../connect/connection.php");
+
+    session_start();
+    
     require_once("php/purchase_infor.php");
 
     $nomecategoria  = $_category['nomecategoria'];

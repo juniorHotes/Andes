@@ -4,30 +4,26 @@
     session_start();
 
     if(isset($_POST["usuario"])){
-        $username = $_POST["usuario"];
-        $password = $_POST["senha"];
+        $usuario = $_POST["usuario"];
+        $senha = $_POST["senha"];
         
-        $access = "SELECT * ";
-        $access .= "FROM clientes ";
-        $access .= "WHERE usuario = '{$username}' and senha = '{$password}' ";
+        $login = "SELECT * ";
+        $login .= "FROM clientes ";
+        $login .= "WHERE usuario = '{$usuario}' and senha = '{$senha}' ";
         
-        $logon = mysqli_query($connect, $access);
-        if(!$logon){
+        $acesso = mysqli_query($connect, $login);
+        if(!$acesso){
             die("Falha ao consultar banco de dados.");
         }
         
-        $user = mysqli_fetch_assoc($logon);
+        $informacao = mysqli_fetch_assoc($acesso);
         
-        if(empty($user)){
+        if(empty($informacao)){
             $mensagem = "Usuário ou senha invalido";
         } else {
-            $_SESSION["usuario"] = $user["clienteID"];
+            $_SESSION["usuario"] = $informacao["clienteID"];
             header("location:index.php");
-        }        
-    }
-
-    if(isset($_SESSION["usuario"])) {
-        header("location:index.php");
+        }
     }
 ?>
 <!DOCTYPE html>

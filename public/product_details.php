@@ -2,6 +2,8 @@
     
     require_once("../connect/connection.php");
 
+    session_start();
+
     if(isset($_GET['product_Id'])) {
         $productID = $_GET['product_Id'];
     } else {

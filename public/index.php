@@ -3,21 +3,17 @@
     require_once("../connect/connection.php");
     
     session_start();
-
-    $logger = false;
-    // Testar se o usuario está logado
-    if(!isset($_SESSION["usuario"])){
-        header("location:login.php");
-    } else {
-        $logger = true;
-    }
     
-    $products = "SELECT produtoID, nomeproduto, precounitario, imagempequena FROM produtos";
+    $products = "SELECT produtoID, nomeproduto, precounitario, imagempequena FROM produtos ";
 
+    if(isset($_GET["search"])) {
+        $product_name    = urlencode($_GET["search"]);
+        $products       .= "WHERE nomeproduto LIKE '%{$product_name}%' "; 
+    }
     $query = mysqli_query($connect, $products);
-
+    
     if(!$query) {
-        die("Falha na consulta ao banco de dados");
+        die("Falha na consulta ao banco de dados");   
     }
     
 ?>
@@ -53,16 +49,6 @@
                 </li>                    
             <?php } ?>
             </ul>
-            <div class="<?php if($logger == false) { echo 'login-content'; } ?>">
-                <div class="login-window">
-                    <form action="index.php" method="POST">
-                        <h2>Enter your user</h2>
-                        <input type="text" name="username" placeholder="User name">
-                        <input type="password" name="password" placeholder="Password">
-                        <input type="submit" value="login">
-                    </form>
-                </div>
-            </div>
         </main>        
         <?php require_once("partials/footer.php") ?>
     </body>

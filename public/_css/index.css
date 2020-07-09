@@ -32,13 +32,19 @@ header h1 {
     font-weight: 800;
 }
 header input {
-    margin-right: 40px;
     padding: 10px;
     color: #666;
     width: 400px;
     border: none;
     outline: none;
     font-weight: 700;
+}
+header input button {
+    margin-right: 40px;
+}
+header p, a {
+    text-decoration: none;
+    color: white;
 }
 footer {
     width: 100%;
