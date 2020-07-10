@@ -9,7 +9,7 @@ main .login-content {
 }
 main .login-window {
     width: 400px;
-    height: 300px;
+    
     background-color: white;
     margin: 140px auto;
     padding: 20px;
@@ -17,6 +17,12 @@ main .login-window {
 main .login-window form {
     display: flex;
     flex-direction: column;
+}
+main .login-window form a {
+    color: seagreen;
+}
+main .login-window form a:hover {
+    text-decoration: underline;
 }
 main .login-window form input {
     margin: 10px 0;

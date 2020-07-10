@@ -25,11 +25,14 @@ header {
     z-index: 2;
 }
 header h1 {
-    color: white;
+    color: wheat;
     font-size: 42px;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     padding-left: 40px;
     font-weight: 800;
+}
+header form {
+    display: flex;
 }
 header input {
     padding: 10px;
@@ -39,12 +42,17 @@ header input {
     outline: none;
     font-weight: 700;
 }
-header input button {
-    margin-right: 40px;
+header form button {
+    width: 50px;
+    border: none;
+    margin: 0 40px 0 -5px;
+    background: white url('../assets/lupa.jpg') center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
-header p, a {
+ header p, a {
     text-decoration: none;
-    color: white;
+    color: wheat;
 }
 footer {
     width: 100%;

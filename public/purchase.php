@@ -28,7 +28,7 @@
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="_css/index.css">
         <link rel="stylesheet" href="_css/purchase.css">
-        <title>Andes - Finalizar compra</title>
+        <title>Andes - Checkout</title>
     </head>
     <body>
         <?php require_once("partials/header.php"); ?>

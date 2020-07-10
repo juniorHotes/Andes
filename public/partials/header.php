@@ -1,5 +1,6 @@
 <header>
     <h1>Andes Coffee</h1>
+
     <?php 
         // Mensagem de saudação para o usuario
         if(isset($_SESSION["usuario"])){
@@ -17,12 +18,14 @@
             $access_logon = mysqli_fetch_assoc($access_logon);
             $name = $access_logon["nomecompleto"];
     ?>
-    <p><?php echo "Olá " . $name ?> - <a href="logout.php">Logout</a></p>
+        <p><?php echo "Olá " . $name ?> - <a href="logout.php">Logout</a></p>
     <?php } else { ?>
         <a href="login.php">Logon</a>
     <?php } ?>
+
     <form action="index.php" method="get">
         <input type="search" name="search" placeholder="Search">
-        <button>searc</button>
+        <button></button>
     </form>
+
 </header>
