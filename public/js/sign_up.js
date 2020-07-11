@@ -1,5 +1,7 @@
 /* Validação de formulário */
+// Validação de numero de telefone
 
+// Validação de senha
 const pwd1 = document.querySelector('input[name=senha1]');
 const pwd2 = document.querySelector('input[name=senha2]');
  
@@ -11,6 +13,7 @@ pwd2.addEventListener('blur', () => {
         alert("The password must contain at least 8 digits");
     }
 })        
+
 
 
 

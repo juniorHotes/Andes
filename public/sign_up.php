@@ -52,14 +52,14 @@
                 <div class="login-window">
                     <form action="sign_up.php" method="POST">
                         <h2>Create your user</h2>
-                        <input type="text" name="nomecompleto" placeholder="Full name" required>
+                        <input type="text" autocomplet name="nomecompleto" placeholder="Full name" required>
                         <input type="text" name="endereco" placeholder="Adress" required>
                         <input type="text" name="complemento" placeholder="Complement">
                         <input type="text" name="numero" placeholder="Number" required>
                         <input type="text" name="cidade" placeholder="Cidade" required>
                         <input type="text" name="cep" placeholder="CEP" required>
                         <input type="text" name="ddd" placeholder="DDD" required>
-                        <input type="tel" name="telefone" placeholder="Phone" required>
+                        <input type="tel" name="telefone" placeholder="Phone: (ddd) 12345-6789" required>
                         <input type="email" name="email" placeholder="Email" required>
                         <input type="text" name="usuario" placeholder="User name" required>
                         <input type="password" name="senha1" placeholder="Password (minimum 8 characters)" required>
@@ -74,7 +74,41 @@
     </body>
     <script src="js/sign_up.js"></script>
     <script>
+        console.log("cidadeID");
 
+        const telElement = document.querySelector('input[name=telefone]');
+        const keys = [
+            "Digit1",
+            "Digit2",
+            "Digit3",
+            "Digit4",
+            "Digit5",
+            "Digit6",
+            "Digit7",
+            "Digit8",
+            "Digit9",
+            "Digit0",
+            "Numpad1",
+            "Numpad2",
+            "Numpad3",
+            "Numpad4",
+            "Numpad5",
+            "Numpad6",
+            "Numpad7",
+            "Numpad8",
+            "Numpad9",
+            "Numpad0"
+        ]
+        telElement.addEventListener('keydown', (event) => {
+
+            if(telElement.value == "") {
+                telElement.value = "(";
+            }
+            if(telElement.value.length >= 3) {
+                telElement.value += ")";
+            }
+            console.log(event);
+        })
         // const estadoElement = document.querySelector('#estado');
         // const cidadeElement = document.querySelector('#cidade');
         // let cidadeID;

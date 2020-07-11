@@ -12,14 +12,15 @@
         $access .= "WHERE usuario = '{$username}' and senha = '{$password}' ";
         
         $logon = mysqli_query($connect, $access);
+        
         if(!$logon){
-            die("Falha ao consultar banco de dados.");
+            die("Failed to query database.");
         }
         
         $user = mysqli_fetch_assoc($logon);
         
         if(empty($user)){
-            $mensagem = "Usuário ou senha invalido";
+            echo "User not registered";
         } else {
             $_SESSION["usuario"] = $user["clienteID"];
             header("location:index.php");
