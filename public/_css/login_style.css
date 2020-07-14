@@ -24,7 +24,7 @@ main .login-window form a {
 main .login-window form a:hover {
     text-decoration: underline;
 }
-main .login-window form input {
+main .login-window form input, select {
     margin: 10px 0;
     padding: 10px;
 }
