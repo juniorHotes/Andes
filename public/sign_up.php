@@ -26,14 +26,6 @@
             die("Falha ao consultar banco de dados.");
         }
     }
-        // $informacao = mysqli_fetch_assoc($acesso);
-        
-        // if(empty($informacao)){
-        //     $mensagem = "Usuário ou senha invalido";
-        // } else {
-        //     $_SESSION["usuario"] = $informacao["clienteID"];
-        //     header("location:index.php");
-        // }
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,15 +48,25 @@
                         <input type="text" name="endereco" placeholder="Adress" required>
                         <input type="text" name="complemento" placeholder="Complement">
                         <input type="text" name="numero" placeholder="Number" required>
-                        <input type="text" name="cidade" placeholder="Cidade" required>
+
+                        <select name="estado" required>
+                            <option value>State</option>
+                        </select>
+
+                        <select name="cidade" disabled="disabled" required>
+                        </select>
+
                         <input type="text" name="cep" placeholder="CEP" required>
-                        <input type="text" name="ddd" placeholder="DDD" required>
-                        <input type="tel" name="telefone" placeholder="Phone: (ddd) 12345-6789" required>
-                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="tel" maxlength="14" placeholder="Phone" name="telefone" required>
+                        <input type="email" name="email" placeholder="Email exe: youremail@mail.com" required>
                         <input type="text" name="usuario" placeholder="User name" required>
                         <input type="password" name="senha1" placeholder="Password (minimum 8 characters)" required>
                         <input type="password" name="senha2" placeholder="Repeat the password" required>
                         <input type="submit" value="Save">
+
+                        <input type="hidden" name="ddd"     value="">
+                        <input type="hidden" name="state"   value="">
+                        <input type="hidden" name="city"    value="">
                     </form>
                 </div>
             </div>
@@ -72,67 +74,8 @@
                 
         <?php require_once("partials/footer.php") ?>
     </body>
-    <script src="js/sign_up.js"></script>
-    <script>
-        console.log("cidadeID");
-
-        const telElement = document.querySelector('input[name=telefone]');
-        const keys = [
-            "Digit1",
-            "Digit2",
-            "Digit3",
-            "Digit4",
-            "Digit5",
-            "Digit6",
-            "Digit7",
-            "Digit8",
-            "Digit9",
-            "Digit0",
-            "Numpad1",
-            "Numpad2",
-            "Numpad3",
-            "Numpad4",
-            "Numpad5",
-            "Numpad6",
-            "Numpad7",
-            "Numpad8",
-            "Numpad9",
-            "Numpad0"
-        ]
-        telElement.addEventListener('keydown', (event) => {
-
-            if(telElement.value == "") {
-                telElement.value = "(";
-            }
-            if(telElement.value.length >= 3) {
-                telElement.value += ")";
-            }
-            console.log(event);
-        })
-        // const estadoElement = document.querySelector('#estado');
-        // const cidadeElement = document.querySelector('#cidade');
-        // let cidadeID;
-
-        // function solicitarEstados() {
-            
-        //     var xhttp = new XMLHttpRequest();
-
-        //     xhttp.onreadystatechange = function() {
-
-        //     if (this.readyState == 4 && this.status == 200) {
-        //         let estados = JSON.parse(this.responseText);
-
-        //         estados.forEach(estado => {
-        //             estadoElement.innerHTML += `<option value="${estado.id}">${estado.nome}</option>`;
-        //             //console.log(cidadeID);
-        //         })   
-        //     }
-        //     };
-        //     xhttp.open("GET", "https://servicodados.ibge.gov.br/api/v1/localidades/estados", true);
-        //     xhttp.send();
-        // }
-
-        // solicitarEstados();
-    </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.maskedinput.js"></script>
+    <script src="js/signup_validation.js"></script>
 </html>
 <?php mysqli_close($connect); ?>
