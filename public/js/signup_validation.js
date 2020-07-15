@@ -1,14 +1,22 @@
 /* Validação de formulário */
 
+// Formatação de telefone
+const phoneInput = document.querySelector('input[name=telefone]').addEventListener('blur', (event) => {
+    const dddInput = document.querySelector('input[name=ddd]')
+    const ddd = event.target.value.substr(1,2)
+    
+    dddInput.value = ddd
+})
+// Formatação de CEP e  Telefone
 $(function () {
-    $('input[name=cep]').mask('99.999-999');
-    $('input[name=telefone]').mask('(99) 99999-9999');
-});
+    $('input[name=cep]').mask('99.999-999')
+    $('input[name=telefone]').mask('(99) 99999-9999')
+})
 
 //#region Selecionar Estado e Cidade
-const stateSelect = document.querySelector('select[name=estado]')
+const stateSelect = document.querySelector('select#estado')
 const stateInput  = document.querySelector('input[name=state]')
-const citySelect  = document.querySelector('select[name=cidade]')   
+const citySelect  = document.querySelector('select#cidade')   
 const cityInput   = document.querySelector('input[name=city]')
 
 function estados() {
