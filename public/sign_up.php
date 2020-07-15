@@ -8,7 +8,8 @@
         $endereco     = $_POST["endereco"];   
         $complemento  = $_POST["complemento"];
         $numero       = $_POST["numero"];
-        $cidade       = $_POST["cidade"];
+        $estado       = $_POST["state"];
+        $cidade       = $_POST["city"];
         $cep          = $_POST["cep"];
         $ddd          = $_POST["ddd"];
         $telefone     = $_POST["telefone"];
@@ -17,14 +18,25 @@
         $senha        = $_POST["senha1"];   
 
         $insert  = "INSERT INTO clientes ";
-        $insert .= "(nomecompleto, endereco, complemento, numero, cidade, cep, ddd, telefone, email, usuario, senha) ";
+        $insert .= "(nomecompleto, endereco, complemento, numero, estado, cidade, cep, ddd, telefone, email, usuario, senha) ";
         $insert .= "VALUES ";
-        $insert .= "('$nomecompleto','$endereco','$complemento','$numero','$cidade','$cep','$ddd','$telefone','$email','$usuario','$senha')";
+        $insert .= "('$nomecompleto','$endereco','$complemento','$numero','$estado','$cidade','$cep','$ddd','$telefone','$email','$usuario','$senha')";
         
         $acesso = mysqli_query($connect, $insert);
         if(!$acesso){
             die("Falha ao consultar banco de dados.");
         }
+    } else {
+        $select_users = "SELECT usuario FROM clientes ";
+
+        $query = mysqli_query($connect, $select_users);
+        $users;
+        while($user = mysqli_fetch_assoc($query)) {
+            
+            $users[] = $user['usuario'];
+        }
+
+        
     }
 ?>
 <!DOCTYPE html>
@@ -49,11 +61,11 @@
                         <input type="text" name="complemento" placeholder="Complement">
                         <input type="text" name="numero" placeholder="Number" required>
 
-                        <select name="estado" required>
+                        <select id="estado" required>
                             <option value>State</option>
                         </select>
 
-                        <select name="cidade" disabled="disabled" required>
+                        <select id="cidade" disabled="disabled" required>
                         </select>
 
                         <input type="text" name="cep" placeholder="CEP" required>
@@ -69,6 +81,10 @@
                         <input type="hidden" name="city"    value="">
                     </form>
                 </div>
+            </div>
+
+            <div id="successful">
+                <h1>User created successfully</h1>
             </div>
         </main>
                 
