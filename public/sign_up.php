@@ -3,6 +3,9 @@
 
     session_start();
 
+    $user_create = false;
+    $users;
+    
     if(isset($_POST["nomecompleto"])){
         $nomecompleto = $_POST["nomecompleto"];
         $endereco     = $_POST["endereco"];   
@@ -26,18 +29,18 @@
         if(!$acesso){
             die("Falha ao consultar banco de dados.");
         }
-    } else {
-        $select_users = "SELECT usuario FROM clientes ";
 
-        $query = mysqli_query($connect, $select_users);
-        $users;
-        while($user = mysqli_fetch_assoc($query)) {
-            
-            $users[] = $user['usuario'];
-        }
+        $user_create = true;
+    }   
+    
+    $select_users = "SELECT usuario FROM clientes ";
 
-        
-    }
+    $query = mysqli_query($connect, $select_users);
+    
+    while($user = mysqli_fetch_assoc($query)) {          
+        $users[] = $user['usuario'];
+    }   
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,5 +96,24 @@
     <script src="js/jquery.js"></script>
     <script src="js/jquery.maskedinput.js"></script>
     <script src="js/signup_validation.js"></script>
+    <script type="text/javascript">
+        const userNameInput = document.querySelector('input[name=usuario]')        
+        let varr = <?php echo json_encode($users) ?>;
+
+        userNameInput.addEventListener('blur', (event) => {
+
+            let nome = varr[varr.indexOf(event.target.value)];
+            
+            if(event.target.value == nome) {
+                alert('Existing user, please choose another name');
+            }
+        });
+
+        if("<?php echo $user_create ?>" == true) {
+            setTimeout(() => {
+                window.location = "login.php"
+            }, 2000);
+        }
+    </script>
 </html>
 <?php mysqli_close($connect); ?>
