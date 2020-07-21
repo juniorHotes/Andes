@@ -14,8 +14,7 @@
     
     if(!$query) {
         die("Falha na consulta ao banco de dados");   
-    }
-    
+    }    
 ?>
 
 
@@ -39,18 +38,35 @@
             ?>
                 <li>
                     <a href="product_details.php?product_Id=<?php echo $pr["produtoID"] ?>">
-                        <img width="80" src="<?php echo $pr["imagempequena"] ?>" alt="imagem do produto">
-                        <h3><?php echo $pr["nomeproduto"] ?></h3>
-                        <span><?php echo "USD " . number_format($pr["precounitario"], 2,",",".") ?></span>
-                    </a>
-                    <a class="buy" href="purchase.php?product_Id=<?php echo $pr["produtoID"] ?>">
-                        Purchase
-                    </a>
-                </li>                    
+                        <div class="product-content">
+                            <img width="80" src="<?php echo $pr["imagempequena"] ?>" alt="imagem do produto">
+                            <h3><?php echo $pr["nomeproduto"] ?></h3>
+                            <span><?php echo "USD " . number_format($pr["precounitario"], 2,",",".") ?></span>
+                        </div>
+                    </a> 
+                    <button class="add-to-cart" value="<?php echo $pr["produtoID"] ?>" title="Add to cart">
+                        Add to cart
+                    </button> 
+                </li> 
             <?php } ?>
             </ul>
         </main>        
         <?php require_once("partials/footer.php") ?>
+        <script>
+            const btnAddcart = document.querySelectorAll('.add-to-cart');
+            const cartItemsElement  = document.querySelector('#cart-items');
+            let cartItems = [];
+
+            btnAddcart.forEach((btn) => {
+                btn.addEventListener('click', (event) => {
+                    cartItems.push(JSON.parse(event.target.value))
+
+                    cartItemsElement.innerHTML = cartItems.length
+
+                    console.log(cartItems)
+                })
+            });
+        </script>
     </body>
 </html>
 

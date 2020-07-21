@@ -6,20 +6,7 @@
     
     require_once("php/purchase_infor.php");
 
-    $nomecategoria  = $_category['nomecategoria'];
-    $imagempequena  = $details['imagempequena'];
-    $nomeproduto    = $details['nomeproduto'];
-    $codigobarra    = $details['codigobarra'];
-    $estoque        = $details['estoque'];
-    $estoque        = $details['estoque'];
-    $precounitario  = $details['precounitario'];
-
-    $fornecedorID   = $_provider['fornecedorID'];
-    $nomefornecedor = $_provider['nomefornecedor'];
-    $endereco       = $_provider['endereco'];
-    $cidade         = $_provider['cidade'];
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -35,75 +22,61 @@
 
         <main>
             <div id="product-purchase">
-                <table>
-                    <caption>Purchase information</caption>
-                    <?php
-                        $i = 0;
-                        while($i < 1) { 
-                    ?>
-                    <div id="product-details">
-                        <tr>
-                            <th colspan="4"><?php echo $nomecategoria ?></th>
-                        </tr>
-                        <tr>
-                            <td rowspan="6">1</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="5">
-                                <img src="<?php echo $imagempequena ?>" alt="Imagem do produto">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <?php echo $nomeproduto ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <?php echo "Bar code: " . $codigobarra ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="600">
-                                <?php echo $estoque . " Available units"; ?>
-                            </td>
-                            <td class="inputs">Amount: 
-                                <input type="number" name="amount" value="1" min="1" max="<?php echo $estoque ?>">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <?php echo "USD " . number_format($precounitario, 2,",",".") . " - Unit price" ?>
-                            </td>
-                            <td class="inputs" id="total">
-                                <?php echo "Total: USD " . number_format($precounitario, 2,",",".") ?>
-                            </td>
-                        </tr>
-                    </div>
-                    <?php
-                        $i++;
-                        } 
-                    ?>
-                </table>
-            </div>
-            <div id="provider-details">
+                <?php if(isset($nomeproduto)) { ?>
                     <table>
-                        <caption>Supplier information</caption>
-                        <tr>
-                            <th>Provider ID</th>
-                            <th>Provider</th>
-                            <th>Address</th>
-                            <th>City</th>
-                        </tr>
-                        <tr>
-                            <td><?php echo $fornecedorID ?></td>
-                            <td><?php echo $nomefornecedor ?></td>
-                            <td><?php echo $endereco ?></td>
-                            <td><?php echo $cidade ?></td>
-                        </tr>
-                    </table>
-                </div>
+                        <caption>Purchase information</caption>
 
+                        <?php
+                            $i = 0;
+                            while($i < 1) { 
+                        ?>
+
+                        <div id="product-details">
+                            <tr>
+                                <td rowspan="6">1</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="5">
+                                    <img src="<?php echo $imagempequena ?>" alt="Imagem do produto">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <?php echo $nomeproduto ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <?php echo "Bar code: " . $codigobarra ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="600">
+                                    <?php echo $estoque . " Available units"; ?>
+                                </td>
+                                <td class="inputs">Amount: 
+                                    <input type="number" name="amount" value="1" min="1" max="<?php echo $estoque ?>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <?php echo "USD " . number_format($precounitario, 2,",",".") . " - Unit price" ?>
+                                </td>
+                                <td class="inputs" id="total">
+                                    <?php echo "Total: USD " . number_format($precounitario, 2,",",".") ?>
+                                </td>
+                            </tr>
+                        </div>
+
+                        <?php $i++; } ?>
+
+                    </table>
+
+                <?php } else { ?>
+                    <h1 style="text-align:center">You do not have any products in the cart</h1>
+                <?php } ?>
+
+            </div>
         </main>
         
         <?php require_once("partials/footer.php") ?>
