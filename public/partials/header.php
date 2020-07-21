@@ -1,5 +1,5 @@
 <header>
-    <h1>Andes Coffee</h1>
+    <a href="index.php"><h1>Andes Coffee</h1></a>
 
     <?php 
         // Mensagem de saudação para o usuario
