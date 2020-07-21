@@ -23,6 +23,11 @@
         <a href="login.php">Logon</a>
     <?php } ?>
 
+    <div id="card-content">
+        <img width="42px" src="assets/carrinho.svg" alt="">
+        <p id="card-items">0</p>
+    </div>
+
     <form action="index.php" method="get">
         <input type="search" name="search" placeholder="Search">
         <button></button>
