@@ -10,25 +10,27 @@ main ul {
     margin-top: 100px;   
 }
 main ul li {
+    position: relative;
+}
+main ul li a div.product-content {
     width: 360px;
     height: 110px;
     margin: 6px; 
     padding: 10px 20px;
     background-color: white;
-    position: relative;
-    cursor: pointer;
 }
-main ul li a.buy {
+main ul li button.add-to-cart {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
     padding: 5px;
     background-color: darkseagreen;
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
     color: white;
-    border-radius: 4px;
+    border: none;
+    outline: none;
     transition: 5ms;
 }
-main ul li a.buy:hover {
+main ul li button.add-to-cart:hover {
     background-color: #78ac78;
 }
 main ul li a {

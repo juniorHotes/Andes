@@ -54,6 +54,21 @@ header form button {
     text-decoration: none;
     color: wheat;
 }
+#cart-content {
+    position: relative;
+}
+#cart-items {
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    text-align: center;
+    background-color: darkseagreen;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    color: white;
+}
 footer {
     width: 100%;
     height: 40px;
