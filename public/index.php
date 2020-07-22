@@ -55,6 +55,8 @@
         <script>
             const btnAddcart = document.querySelectorAll('.add-to-cart');
             const cartItemsElement  = document.querySelector('#cart-items');
+            const link = document.querySelector('#cart-content a');
+            
             let cartItems = [];
 
             btnAddcart.forEach((btn) => {
@@ -62,8 +64,10 @@
                     cartItems.push(JSON.parse(event.target.value))
 
                     cartItemsElement.innerHTML = cartItems.length
+                    link.href = "purchase.php?product_Id=" + cartItems
 
                     console.log(cartItems)
+                    console.log(link)
                 })
             });
         </script>

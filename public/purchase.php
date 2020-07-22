@@ -22,13 +22,24 @@
 
         <main>
             <div id="product-purchase">
-                <?php if(isset($nomeproduto)) { ?>
+                <?php //if(isset($nomeproduto)) { ?>
                     <table>
                         <caption>Purchase information</caption>
 
                         <?php
-                            $i = 0;
-                            while($i < 1) { 
+                            for($i = 0; $i < $arraysize; $i++) {
+
+                                $product = "SELECT * FROM produtos WHERE produtoID = {$array[$i]}";
+
+                                $query = mysqli_query($connect, $product);
+                                $details = mysqli_fetch_assoc($query);
+                            
+                                $imagempequena  = $details['imagempequena'];
+                                $nomeproduto    = $details['nomeproduto'];
+                                $codigobarra    = $details['codigobarra'];
+                                $estoque        = $details['estoque'];
+                                $estoque        = $details['estoque'];
+                                $precounitario  = $details['precounitario'];                            
                         ?>
 
                         <div id="product-details">
@@ -68,13 +79,13 @@
                             </tr>
                         </div>
 
-                        <?php $i++; } ?>
+                        <?php } ?>
 
                     </table>
 
-                <?php } else { ?>
+                <?php //} else { ?>
                     <h1 style="text-align:center">You do not have any products in the cart</h1>
-                <?php } ?>
+                <?php// } ?>
 
             </div>
         </main>
