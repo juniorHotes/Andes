@@ -21,103 +21,98 @@
         <?php require_once("partials/header.php"); ?>
 
         <main>
-            <div id="product-purchase">
-                <?php //if(isset($nomeproduto)) { ?>
-                    <table>
-                        <caption>Purchase information</caption>
+            <?php if($arraysize >= 0) { ?>
 
-                        <?php
-                            for($i = 0; $i < $arraysize; $i++) {
+                <h1>Your cart</h1>
 
-                                $product = "SELECT * FROM produtos WHERE produtoID = {$array[$i]}";
+                <?php
+                    for($i = 0; $i < $arraysize; $i++) {
 
-                                $query = mysqli_query($connect, $product);
-                                $details = mysqli_fetch_assoc($query);
-                            
-                                $imagempequena  = $details['imagempequena'];
-                                $nomeproduto    = $details['nomeproduto'];
-                                $codigobarra    = $details['codigobarra'];
-                                $estoque        = $details['estoque'];
-                                $estoque        = $details['estoque'];
-                                $precounitario  = $details['precounitario'];                            
-                        ?>
+                        $product = "SELECT * FROM produtos WHERE produtoID = {$array[$i]}";
+            
+                        $query = mysqli_query($connect, $product);
+                        $details = mysqli_fetch_assoc($query);
+                        
+                        $produtoID      = $details['produtoID'];
+                        $imagempequena  = $details['imagempequena'];
+                        $nomeproduto    = $details['nomeproduto'];
+                        $codigobarra    = $details['codigobarra'];
+                        $estoque        = $details['estoque'];
+                        $precounitario  = $details['precounitario'];                            
+                    
+                ?>
 
-                        <div id="product-details">
-                            <tr>
-                                <td rowspan="6">1</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="5">
-                                    <img src="<?php echo $imagempequena ?>" alt="Imagem do produto">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <?php echo $nomeproduto ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <?php echo "Bar code: " . $codigobarra ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="600">
-                                    <?php echo $estoque . " Available units"; ?>
-                                </td>
-                                <td class="inputs">Amount: 
-                                    <input type="number" name="amount" value="1" min="1" max="<?php echo $estoque ?>">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <?php echo "USD " . number_format($precounitario, 2,",",".") . " - Unit price" ?>
-                                </td>
-                                <td class="inputs" id="total">
-                                    <?php echo "Total: USD " . number_format($precounitario, 2,",",".") ?>
-                                </td>
-                            </tr>
+                <div class="product-details">
+                    <div>
+                        <img src="<?php echo $imagempequena ?>" alt="Imagem do produto">
+                    </div>
+                    <div class="details" >
+                        <div>
+                            <h2><?php echo $nomeproduto ?></h2>
+                            <h4><?php echo $estoque . " Available units"; ?></h4>
+                            <h4><?php echo "USD " . number_format($precounitario, 2,",",".") . " - Unit price" ?></h4>
                         </div>
+                        <div class="inputs">                        
+                            <p id="total">
+                                <?php echo "Total: USD " . number_format($precounitario, 2,",",".") ?>
+                            </p>
+                            <div>
+                                <label for="amount">Units</label>
+                                <input type="number" name="amount" value="1" min="1" max="<?php echo $estoque ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" value="<?php echo $produtoID ?>">
+                </div>
 
-                        <?php } ?>
+                <?php } ?>
 
-                    </table>
+            <?php } else { ?>
+                <h1 style="text-align:center">Your shopping cart is empty</h1>
+            <?php } ?>
 
-                <?php //} else { ?>
-                    <h1 style="text-align:center">You do not have any products in the cart</h1>
-                <?php// } ?>
-
-            </div>
         </main>
         
         <?php require_once("partials/footer.php") ?>
     </body>
     <script>
-        const inputAmount  = document.querySelector('input[name=amount]');
-        const totalElement = document.querySelector('#total');
+        const inputAmount  = document.querySelectorAll('input[name=amount]')
+        const totalElement = document.querySelector('#total')
 
-        inputAmount.addEventListener('change', () => {
+        const productElement = document.querySelectorAll('input[type=hidden]')
+        let id = []
+        productElement.forEach((e) => {
+            
+            id.push(e.value)
+            console.log(id)
+        })
 
-        let precounitario = <?php echo $precounitario ?>;
-        let estoque = <?php echo $estoque ?>;
+        inputAmount.forEach((input) => {
+            input.addEventListener('change', () => {
 
-        let mult = inputAmount.value;
+            let precounitario = <?php echo $precounitario ?>;
+            let estoque = <?php echo $estoque ?>;
 
-        totalElement.innerHTML = "Total: USD ";
+            let mult = inputAmount.value
 
-        if(inputAmount.value > estoque) {
+            totalElement.innerHTML = "Total: USD "
 
-            precounitario *= estoque;
-            totalElement.innerHTML += precounitario.toFixed(2).replace(".",",");
-            inputAmount.value = estoque;
+            if(inputAmount.value > estoque) {
 
-        } else {
+                precounitario *= estoque;
+                totalElement.innerHTML += precounitario.toFixed(2).replace(".",",")
+                inputAmount.value = estoque;
 
-            precounitario *= mult;
-            totalElement.innerHTML += precounitario.toFixed(2).replace(".",",");
-        }
+            } else {
+
+                precounitario *= mult;
+                totalElement.innerHTML += precounitario.toFixed(2).replace(".",",")
+            }
+            });
         });
+
     </script>
+    <script src="js/add_to_cart.js"></script>
 </html>
 
 <?php mysqli_close($connect); ?>
