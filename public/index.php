@@ -15,6 +15,10 @@
     if(!$query) {
         die("Falha na consulta ao banco de dados");   
     }    
+
+    function myFunction() {
+    }
+    
 ?>
 
 
@@ -52,25 +56,7 @@
             </ul>
         </main>        
         <?php require_once("partials/footer.php") ?>
-        <script>
-            const btnAddcart = document.querySelectorAll('.add-to-cart');
-            const cartItemsElement  = document.querySelector('#cart-items');
-            const link = document.querySelector('#cart-content a');
-            
-            let cartItems = [];
-
-            btnAddcart.forEach((btn) => {
-                btn.addEventListener('click', (event) => {
-                    cartItems.push(JSON.parse(event.target.value))
-
-                    cartItemsElement.innerHTML = cartItems.length
-                    link.href = "purchase.php?product_Id=" + cartItems
-
-                    console.log(cartItems)
-                    console.log(link)
-                })
-            });
-        </script>
+        <script src="js/addToCart.js"></script>
     </body>
 </html>
 
