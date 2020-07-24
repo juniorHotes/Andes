@@ -24,7 +24,7 @@
     <?php } ?>
 
     <div id="cart-content">
-        <a href="purchase.php?product_Id=">
+        <a href="purchase.php">
         <img width="42px" src="assets/carrinho.svg" alt="">
         <p id="cart-items">0</p>
         </a>
