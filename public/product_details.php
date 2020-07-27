@@ -44,14 +44,15 @@
                         <p><?php echo $details['estoque'] . " Available units"; ?></p>
                         <span><?php echo "USD " . number_format($details['precounitario'], 2,",",".") ?></span>
                     </div>
-                    <a class="buy" href="purchase.php?product_Id=<?php echo $productID ?>">
-                        Purchase
-                    </a>
+                    <button class="add-to-cart" value="<?php echo $details["produtoID"] ?>" title="Add to cart">
+                        Add to cart
+                    </button> 
                 </ul>
             </div>
         </main>
         
         <?php require_once("partials/footer.php") ?>
+        <script src="js/addToCart.js"></script>
     </body>
 </html>
 
