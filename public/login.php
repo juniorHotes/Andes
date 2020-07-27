@@ -57,6 +57,7 @@
             </div>
         </main>        
         <?php require_once("partials/footer.php") ?>
+        <script src="js/addToCart.js"></script>
     </body>
 </html>
 <?php mysqli_close($connect); ?>

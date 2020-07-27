@@ -96,6 +96,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/jquery.maskedinput.js"></script>
     <script src="js/signup_validation.js"></script>
+    <script src="js/addToCart.js"></script>
     <script type="text/javascript">
         const userNameInput = document.querySelector('input[name=usuario]')        
         let varr = <?php echo json_encode($users) ?>;
