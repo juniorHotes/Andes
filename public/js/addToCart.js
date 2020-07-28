@@ -8,7 +8,7 @@ let cartItems = []
 let cookie_name = "addToCart"
 
 // Deletar cookie
-//document.cookie = "addToCart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+//document.cookie = "addToCart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
 
 function getCookie(cname) {
     var name = cname + "="
@@ -29,20 +29,20 @@ function getCookie(cname) {
 }
 
 function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
+    var d = new Date()
 
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000))
 
-    var expires = "expires=" + d.toGMTString();
+    var expires = "expires=" + d.toGMTString()
 
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"
 }
 
 function checkCookie() {
-    var value = getCookie(cookie_name);
+    var value = getCookie(cookie_name)
 
     if (value != "") {
-        console.log("Possuie cookie " + value);
+        console.log("Possuie cookie " + value)
 
         let split = value.split(',')
         cartItems = split
@@ -59,18 +59,12 @@ btnAddcart.forEach((btn) => {
     btn.addEventListener('click', (event) => {
 
         let index = cartItems.indexOf(event.target.value)
-
-        console.log(index)
-        console.log(cartItems[index])
         
-        if (event.target.value == cartItems[index]) {
-            console.log("Já contém este valor")
-        }
+        if (event.target.value != cartItems[index]) {
+            cartItems.push(event.target.value)
+            cartItemsElement.innerHTML = cartItems.length
 
-        cartItems.push(event.target.value)
-        cartItemsElement.innerHTML = cartItems.length
-
-        console.log(cartItems)
-        setCookie(cookie_name, cartItems, 1)
+            setCookie(cookie_name, cartItems, 1)
+        }         
     })
-});
+})
