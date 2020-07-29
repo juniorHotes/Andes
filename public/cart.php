@@ -21,7 +21,7 @@
         <?php require_once("partials/header.php"); ?>
 
         <main>
-            <?php if($arraysize >= 0) { ?>
+            <?php if(isset($_COOKIE[$cookie_name])) { ?>
 
                 <h1>Your cart</h1>
 
@@ -50,15 +50,18 @@
                         <div>
                             <h2><?php echo $nomeproduto ?></h2>
                             <h5><?php echo $estoque . " Available units"; ?></h5>
-                            <h4><?php echo "USD " . number_format($precounitario, 2,",",".") . " - Unit price" ?></h4>
+                            <h4><?php echo "$" . number_format($precounitario, 2,",",".") . " - Unit price" ?></h4>
                         </div>
                         <div class="inputs">                        
                             <p id="total">
-                                <?php echo "Total: USD " . number_format($precounitario, 2,",",".") ?>
+                                <?php echo "Total: $" . number_format($precounitario, 2,",",".") ?>
                             </p>
                             <div>
                                 <label for="amount">Units</label>
-                                <input type="number" name="amount" value="1" min="1" max="<?php echo $estoque ?>">
+                                <input id="<?php echo $i ?>" type="number" name="amount" value="1" min="1" max="<?php echo $estoque ?>">
+                            </div>
+                            <div>
+                                <a href="#"><img width="24" src="assets/cruz.svg" alt="Delete item" title="Delete item"></a>
                             </div>
                         </div>
                     </div>
@@ -79,43 +82,7 @@
         
         <?php require_once("partials/footer.php") ?>
     </body>
-    <script>
-        const inputAmount  = document.querySelectorAll('input[name=amount]')
-        const totalElement = document.querySelectorAll('#total')
-        const productElement = document.querySelectorAll('input[type=hidden]')
-        
-        inputAmount.forEach((input) => {
-            input.addEventListener('change', () => {
-            
-            console.log(inputAmount)
-            let units = input.value
-            console.log("units: "+ units)
-
-            totalElement[0].innerHTML = "Total: USD "
-
-            let estoque = input.max
-            console.log("estoque: "+ estoque)
-            
-            let precounitario = productElement[0].value
-            console.log("precounitario: "+ precounitario)
-
-            if(units > estoque) {
-
-                precounitario *= estoque;
-                totalElement[0].innerHTML += precounitario.toFixed(2).replace(".",",")
-                input.value = estoque;
-                console.log("Igual ao estoque")
-
-            } else {
-
-                precounitario *= units;
-                totalElement[0].innerHTML += precounitario.toFixed(2).replace(".",",")
-                console.log("menor q o estoque")
-            }
-            });
-        });
-
-    </script>
+    <script src="js/cart.js"></script>
     <script src="js/addToCart.js"></script>
 </html>
 
