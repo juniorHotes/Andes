@@ -1,7 +1,7 @@
 // Adicionar produtos ao carrinho
 
-const btnAddcart = document.querySelectorAll('.add-to-cart')
-const cartItemsElement = document.querySelector('#cart-items')
+const btnAddcart        = document.querySelectorAll('.add-to-cart')
+const cartItemsElement  = document.querySelector('#cart-items')
 
 let cartItems = []
 
@@ -54,7 +54,7 @@ function checkCookie() {
 }
 
 checkCookie()
-
+// Adicionar ao carrinho
 btnAddcart.forEach((btn) => {
     btn.addEventListener('click', (event) => {
 
