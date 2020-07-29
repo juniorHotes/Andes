@@ -1,9 +1,10 @@
 // Multiplicar produtos do carrinho
 
-const inputAmount = document.querySelectorAll('input[name=amount]')
+const inputAmount    = document.querySelectorAll('input[name=amount]')
 const totalElement   = document.querySelectorAll('#total')
 const productElement = document.querySelectorAll('input[type=hidden]')
 const totalValue     = document.querySelector('#total-value')
+const btnDelete      = document.querySelectorAll('.delete')
 
 var formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -36,6 +37,9 @@ inputAmount.forEach((input) => {
 });
 
 function totalCart() {
+
+    if (productElement.length == 0) return
+    
     let array1 = []
     for (let i = 0; i < inputAmount.length; i++) {
         array1.push(parseFloat(productElement[i].value * inputAmount[i].value ))
@@ -46,3 +50,26 @@ function totalCart() {
 }
 
 totalCart()
+
+// Deletar produto
+btnDelete.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+        event.preventDefault()
+
+        let index = btn.id
+        cartItems.splice(index, 1)
+
+        setCookie(cookie_name, cartItems, 1)
+ 
+        setTimeout(() => {
+            window.location = "cart.php"
+        }, 400);
+
+        btn.parentElement.parentElement.parentElement.classList.add("fade-delete")
+
+        console.log(cartItems.length)
+        if (cartItems.length == 0) {
+            document.cookie = "addToCart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+        }
+    })
+})
