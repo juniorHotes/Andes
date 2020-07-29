@@ -48,3 +48,22 @@ main h1 {
     flex-direction: column;
     text-align: center;
 }
+#total-value {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #ff5252;
+    color: white;
+    text-align: center;
+}
+/* Delete produto */
+.fade-delete {
+    animation: fadeout 400ms;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    } 100% {
+        opacity: 0;
+    }
+}
