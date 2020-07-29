@@ -60,8 +60,10 @@
                                 <label for="amount">Units</label>
                                 <input id="<?php echo $i ?>" type="number" name="amount" value="1" min="1" max="<?php echo $estoque ?>">
                             </div>
-                            <div>
-                                <a href="#"><img width="24" src="assets/cruz.svg" alt="Delete item" title="Delete item"></a>
+                            <div class="delete" id="<?php echo $i ?>">
+                                <a href="#">
+                                    <img width="24" src="assets/cruz.svg" alt="Delete item" title="Delete item">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -70,8 +72,8 @@
                 
                 <?php } ?>
                 
-                <h2 id="total-value" style="text-align: center">
-                    <?php echo "Total value of your cart: USD " . number_format($precounitario, 2,",",".") ?>
+                <h2 id="total-value">
+                    <?php echo "Total value of your cart: $" . number_format($precounitario, 2,",",".") ?>
                 </h2>
 
             <?php } else { ?>
