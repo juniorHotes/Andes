@@ -1,5 +1,10 @@
 <header>
     <a href="index.php"><h1>Andes Coffee</h1></a>
+    
+    <form action="index.php" method="get">
+        <input type="search" name="search" placeholder="Search">
+        <button></button>
+    </form>
 
     <?php 
         // Mensagem de saudação para o usuario
@@ -30,9 +35,5 @@
         </a>
     </div>
 
-    <form action="index.php" method="get">
-        <input type="search" name="search" placeholder="Search">
-        <button></button>
-    </form>
 
 </header>
