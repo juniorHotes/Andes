@@ -59,7 +59,7 @@
                 <div class="login-window">
                     <form action="sign_up.php" method="POST">
                         <h2>Create your user</h2>
-                        <input type="text" autocomplet name="nomecompleto" placeholder="Full name" required>
+                        <input type="text" autocomplet name="nomecompleto" placeholder="Full name" required autofocus>
                         <input type="text" name="endereco" placeholder="Adress" required>
                         <input type="text" name="complemento" placeholder="Complement">
                         <input type="text" name="numero" placeholder="Number" required>

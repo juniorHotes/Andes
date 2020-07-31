@@ -48,7 +48,7 @@
                 <div class="login-window">
                     <form action="login.php" method="POST">
                         <h2>Enter your user</h2>
-                        <input type="text" name="usuario" placeholder="User name">
+                        <input type="text" name="usuario" placeholder="User name" autofocus>
                         <input type="password" name="senha" placeholder="Password">
                         <input type="submit" value="login">
                         <a href="sign_up.php">Sign Up</a>
