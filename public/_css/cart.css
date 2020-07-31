@@ -50,9 +50,26 @@ main h1 {
 }
 #total-value {
     width: 90%;
+    padding: 10px 0;
     margin: 0 auto;
     background-color: #ff5252;
     color: white;
+    text-align: center;
+}
+div#checkout {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+div#checkout a {
+    display: block;
+    width: 160px;
+    padding: 10px 20px;
+    background-color: darkseagreen;
+    color: white;
+    font-size: 26px;
     text-align: center;
 }
 /* Delete produto */

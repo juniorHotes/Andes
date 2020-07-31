@@ -85,10 +85,6 @@
                     </form>
                 </div>
             </div>
-
-            <div id="successful">
-                <h1>User created successfully</h1>
-            </div>
         </main>
                 
         <?php require_once("partials/footer.php") ?>
