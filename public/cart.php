@@ -15,7 +15,7 @@
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="_css/index.css">
         <link rel="stylesheet" href="_css/cart.css">
-        <title>Andes - Checkout</title>
+        <title>Andes - you cart</title>
     </head>
     <body>
         <?php require_once("partials/header.php"); ?>
@@ -75,13 +75,15 @@
                 <h2 id="total-value">
                     <?php echo "Total value of your cart: $" . number_format($precounitario, 2,",",".") ?>
                 </h2>
+                <div id="checkout">
+                    <a href="checkout.php">Checkout</a>
+                </div>
 
             <?php } else { ?>
                 <h1 style="text-align:center">Your shopping cart is empty</h1>
             <?php } ?>
 
         </main>
-        
         <?php require_once("partials/footer.php") ?>
     </body>
     <script src="js/cart.js"></script>
