@@ -56,6 +56,7 @@ header form button {
 }
 #cart-content {
     position: relative;
+    margin: 0 20px;
 }
 #cart-items {
     width: 24px;
