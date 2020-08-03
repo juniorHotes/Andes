@@ -1,0 +1,45 @@
+main {
+    min-height: 100vh;
+    margin: 140px auto;
+}
+main #credit-card {
+    width: 400px;
+    background-color: white;
+    margin: 140px auto;
+    padding: 20px;
+}
+main #credit-card form {
+    display: flex;
+    flex-direction: column;
+}
+main #credit-card form input, select {
+    margin: 10px 0;
+    padding: 10px;
+}
+main #credit-card form input[type=submit] {
+    border: none;
+    background: #834b02;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+.form-payment {
+    margin: 20px 0;
+    display: flex;
+}
+.form-payment div{
+    margin-right: 40px;
+}
+.flags {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.flags .line {
+    display: flex;
+    align-items: center;
+    margin: 0 20px 20px;
+}
+.flags .line img {
+    margin: 0 4px;
+}
