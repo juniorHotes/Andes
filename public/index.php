@@ -29,7 +29,6 @@
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="_css/index.css">
         <link rel="stylesheet" href="_css/products.css">
-        <link rel="stylesheet" href="_css/login_style.css">
         <title>Andes Coffee</title>
     </head>
     <body>
