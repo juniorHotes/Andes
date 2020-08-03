@@ -2,31 +2,41 @@ main {
     min-height: 100vh;
     margin: 140px auto;
 }
-main .login-window {
+.login-window {
     width: 400px;
-    
     background-color: white;
     margin: 140px auto;
     padding: 20px;
 }
-main .login-window form {
+.login-window form {
     display: flex;
     flex-direction: column;
 }
-main .login-window form a {
-    color: seagreen;
-}
-main .login-window form a:hover {
-    text-decoration: underline;
-}
-main .login-window form input, select {
+.login-window form input, select {
     margin: 10px 0;
     padding: 10px;
 }
-main .login-window form input[type=submit] {
+.login-window form input[type=submit] {
     border: none;
     background: #834b02;
     color: white;
     font-size: 18px;
     cursor: pointer;
+    margin-bottom: 30px;
+}
+.login-window form a {
+    margin: 20px 0;
+    background: darkseagreen;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px;
+}
+.login-window form input[type=submit]:hover, 
+.login-window form a:hover {
+    filter: brightness(1.1)
+}
+.login-window h4 {
+    text-align: center;
 }
