@@ -3,6 +3,7 @@
 
     session_start();
 
+    $not_registered = "";
     if(isset($_POST["usuario"])){
         $username = $_POST["usuario"];
         $password = $_POST["senha"];
@@ -19,16 +20,19 @@
         
         $user = mysqli_fetch_assoc($logon);
         
-        if(empty($user)){
-            echo "User not registered";
+        if(empty($user)) {
+            $not_registered = '<h2 style="color:red; margin-bottom:20px">User not registered</h2>';
         } else {
             $_SESSION["usuario"] = $user["clienteID"];
-            header("location:index.php");
-        }        
+           header("location:index.php");
+        }    
     }
 
-    if(isset($_SESSION["usuario"])) {
-        header("location:index.php");
+    $checkout = "";
+    if(isset($_GET["Checkout"])) {
+        $checkout = '<h2 style="color:darkseagreen; margin-bottom:20px">To complete your purchase you need to register or login</h2>';
+    } else {
+        $checkout = "";
     }
 ?>
 <!DOCTYPE html>
@@ -44,14 +48,18 @@
         <?php require_once("partials/header.php"); ?>
 
         <main>
-            <div class="login-content show-login">
+            <div class="login-content">
                 <div class="login-window">
+                <?php echo $checkout ?>
+                <?php echo $not_registered ?>
                     <form action="login.php" method="POST">
                         <h2>Enter your user</h2>
-                        <input type="text" name="usuario" placeholder="User name" autofocus>
-                        <input type="password" name="senha" placeholder="Password">
-                        <input type="submit" value="login">
-                        <a href="sign_up.php">Sign Up</a>
+                        <input type="text" name="usuario" placeholder="User name" required autofocus>
+                        <input type="password" name="senha" placeholder="Password" required>
+                        <input type="submit" value="login" title="Submit">
+                        <hr>
+                        <h4>Don't have an account yet?</h4>
+                        <a href="sign_up.php" title="Sign Up" rel="Sign Up">Sign Up</a>
                     </form>
                 </div>
             </div>
