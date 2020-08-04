@@ -33,20 +33,20 @@
             ?>
             <?php } else { ?>
 
-                <div id="credit-card">
+                <div id="payment-content">
                     <h2>Form of payment</h2>
-                    <form action="#">
-                        <div class="form-payment">
-                            <div>
-                                <input type="radio" name="credit-card" value="credit-card" checked>
-                                <label for="credit-card">Credit card</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="billet" value="">
-                                <label for="billet">Billet</label>
-                            </div>
+                    <div class="tipy-pay">
+                        <div>
+                            <input type="radio" name="tipy-payment" id="credit-card" value="credit-card" checked>
+                            <label for="credit-card">Credit card</label>
                         </div>
-            
+                        <div>
+                            <input type="radio" name="tipy-payment" id="billet" value="billet">
+                            <label for="billet">Billet</label>
+                        </div>                    
+                    </div>
+
+                    <form action="checkout.php" class="credit-card show">                        
                         <div class="flags">
                             <div class="flags-title">Credit cards</div>
                             <div class="line">
@@ -79,6 +79,21 @@
                             <option value="9">9x Interest-free</option>
                             <option value="10">10x Interest-free</option>
                         </select>
+
+                        <input type="hidden" name="tipy-payment" value="_card">
+
+                        <input type="submit" value="Submit">
+                    </form> 
+
+                    <form action="checkout.php" class="billet">
+                        <label for="full-name">Full name</label>
+                        <input type="text" name="full-name" value="" placeholder="" autofocus>
+
+                        <label for="cpf">CPF</label>
+                        <input type="number" name="cpf" value="" placeholder="Ex: 04200841347">
+
+                        <input type="hidden" name="tipy-payment" value="_billet">
+
                         <input type="submit" value="Submit">
                     </form> 
                 </div>
@@ -88,6 +103,19 @@
         <?php require_once("partials/footer.php") ?>
     </body>
     <script src="js/addToCart.js"></script>
+    <script>
+        const inputRadio = document.querySelectorAll('input[type=radio]')
+
+        const creditCard = document.querySelector('.credit-card')
+        const billet = document.querySelector('.billet')
+        
+        inputRadio.forEach(radio => {
+            radio.addEventListener('click', () => {
+                creditCard.classList.toggle("show")
+                billet.classList.toggle("show")
+            })
+        });
+    </script>
 </html>
 
 <?php mysqli_close($connect); ?>
