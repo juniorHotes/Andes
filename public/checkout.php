@@ -6,6 +6,10 @@
 
     $use = false;
 
+    if(isset($_POST['_total'])) {
+        $total = $_POST['_total'];
+    }
+
     if(isset($_SESSION["usuario"])) {
         $user = true;
     } else {
@@ -46,6 +50,9 @@
                         </div>                    
                     </div>
 
+                    <strong id="purchase-price">Total purchase amount: $<?php echo $total ?></strong>
+                    <input type="hidden" name="total" value="<?php echo $total ?>">
+
                     <form action="checkout.php" class="credit-card show">                        
                         <div class="flags">
                             <div class="flags-title">Credit cards</div>
@@ -67,6 +74,7 @@
                         <input type="month" name="expiration-date" value="">
 
                         <label for="installments">Number of installments</label>
+                        
                         <select name="installments" id="installments">
                             <option value="1">1x Interest-free</option>
                             <option value="2">2x Interest-free</option>
@@ -80,9 +88,10 @@
                             <option value="10">10x Interest-free</option>
                         </select>
 
-                        <input type="hidden" name="tipy-payment" value="_card">
-
+                        <span></span>
                         <input type="submit" value="Submit">
+
+                        <input type="hidden" name="tipy-payment" value="_card">
                     </form> 
 
                     <form action="checkout.php" class="billet">
@@ -115,6 +124,15 @@
                 billet.classList.toggle("show")
             })
         });
+
+        const installments = document.querySelector('select')
+        const purchasePrice = document.querySelector('#purchase-price')
+
+        installments.addEventListener('change', () => {
+           
+        })
+
+
     </script>
 </html>
 

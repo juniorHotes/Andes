@@ -26,6 +26,14 @@ main #payment-content form input[type=submit] {
 .tipy-pay div{
     margin-right: 40px;
 }
+
+#purchase-price {
+    display: block;
+    margin: 20px auto;
+    padding: 8px;
+    background-color: darkseagreen;
+    color: white;
+}
 .flags {
     display: flex;
     flex-direction: column;
