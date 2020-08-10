@@ -5,6 +5,7 @@ const totalElement   = document.querySelectorAll('#total')
 const productElement = document.querySelectorAll('input[type=hidden]')
 const totalValue     = document.querySelector('#total-value')
 const btnDelete      = document.querySelectorAll('.delete')
+const inputTotal     = document.querySelector('input[name=_total]')
 
 var formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -33,8 +34,27 @@ inputAmount.forEach((input) => {
 
         totalCart()
 
+        for (let i = 0; i < inputAmount.length; i++) {
+            sessionStorage.setItem(i, inputAmount[i].value)
+        }
+        
+
     });
 });
+
+// document.cookie = "addToCart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+// sessionStorage.clear()
+
+if (sessionStorage.length > 0) {
+    for (let index = 0; index < inputAmount.length; index++) {
+
+        let x = sessionStorage.getItem(index)
+        inputAmount[index].value = x 
+        totalElement[index].innerHTML = "Total: " + formatter.format(productElement[index].value * inputAmount[index].value)
+    
+        console.log(x)
+    }
+}
 
 function totalCart() {
 
@@ -47,6 +67,7 @@ function totalCart() {
     let total = array1.reduce((total, num) => { return total + num })
 
     totalValue.innerHTML = "Total value of your cart: " + formatter.format(total)
+    inputTotal.value = total.toFixed(2)
 }
 
 totalCart()
@@ -71,5 +92,8 @@ btnDelete.forEach((btn) => {
         if (cartItems.length == 0) {
             document.cookie = "addToCart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
         }
+
+        sessionStorage.removeItem(index)
     })
 })
+

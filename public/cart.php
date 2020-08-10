@@ -38,8 +38,7 @@
                         $nomeproduto    = $details['nomeproduto'];
                         $codigobarra    = $details['codigobarra'];
                         $estoque        = $details['estoque'];
-                        $precounitario  = $details['precounitario'];                            
-                    
+                        $precounitario  = $details['precounitario'];                        
                 ?>
 
                 <div class="product-details">
@@ -72,11 +71,18 @@
                 
                 <?php } ?>
                 
-                <h2 id="total-value">
-                    <?php echo "Total value of your cart: $" . number_format($precounitario, 2,",",".") ?>
-                </h2>
+                <h2 id="total-value">Total value of your cart: </h2>
+
+                
                 <div id="checkout">
-                    <a href="checkout.php">Checkout</a>
+                    <span>
+                        <a id="keep-buying" href="index.php">Keep buying</a>
+                    </span>
+
+                    <form action="checkout.php" method="POST">
+                        <input type="hidden" name="_total" value="">
+                        <input type="submit" value="checkout">
+                    </form>
                 </div>
 
             <?php } else { ?>

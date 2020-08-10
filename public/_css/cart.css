@@ -60,17 +60,18 @@ div#checkout {
     width: 90%;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
 }
-div#checkout a {
+div#checkout form input, span #keep-buying {
     display: block;
-    width: 160px;
     padding: 10px 20px;
     background-color: darkseagreen;
+    border: none;
     color: white;
     font-size: 26px;
     text-align: center;
+    cursor: pointer;
 }
 /* Delete produto */
 .fade-delete {
