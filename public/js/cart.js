@@ -34,27 +34,9 @@ inputAmount.forEach((input) => {
 
         totalCart()
 
-        for (let i = 0; i < inputAmount.length; i++) {
-            sessionStorage.setItem(i, inputAmount[i].value)
-        }
-        
-
     });
 });
 
-// document.cookie = "addToCart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
-// sessionStorage.clear()
-
-if (sessionStorage.length > 0) {
-    for (let index = 0; index < inputAmount.length; index++) {
-
-        let x = sessionStorage.getItem(index)
-        inputAmount[index].value = x 
-        totalElement[index].innerHTML = "Total: " + formatter.format(productElement[index].value * inputAmount[index].value)
-    
-        console.log(x)
-    }
-}
 
 function totalCart() {
 
@@ -92,8 +74,6 @@ btnDelete.forEach((btn) => {
         if (cartItems.length == 0) {
             document.cookie = "addToCart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
         }
-
-        sessionStorage.removeItem(index)
     })
 })
 
