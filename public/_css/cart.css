@@ -8,7 +8,7 @@ main h1 {
     margin: 0 auto;
     text-align: center;
     color: white;
-    background-color: darkseagreen;
+    background-color: var(--color-button-green);
 
 }
 .product-details {
@@ -52,13 +52,13 @@ main h1 {
     width: 90%;
     padding: 10px 0;
     margin: 0 auto;
-    background-color: #ff5252;
+    background-color: var(--color-text-red);
     color: white;
     text-align: center;
 }
 div#checkout {
     width: 90%;
-    margin: 0 auto;
+    margin: 24px auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -66,7 +66,7 @@ div#checkout {
 div#checkout form input, span #keep-buying {
     display: block;
     padding: 10px 20px;
-    background-color: darkseagreen;
+    background-color: var(--color-button-green);
     border: none;
     color: white;
     font-size: 26px;

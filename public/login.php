@@ -56,10 +56,10 @@
                         <h2>Enter your user</h2>
                         <input type="text" name="usuario" placeholder="User name" required autofocus>
                         <input type="password" name="senha" placeholder="Password" required>
-                        <input type="submit" value="login" title="Submit">
+                        <input class="button-hover" type="submit" value="login" title="Submit">
                         <hr>
                         <h4>Don't have an account yet?</h4>
-                        <a href="sign_up.php" title="Sign Up" rel="Sign Up">Sign Up</a>
+                        <a class="button-hover" href="sign_up.php" title="Sign Up" rel="Sign Up">Sign Up</a>
                     </form>
                 </div>
             </div>

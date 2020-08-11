@@ -44,7 +44,7 @@
                         <p><?php echo $details['estoque'] . " Available units"; ?></p>
                         <span><?php echo "USD " . number_format($details['precounitario'], 2,",",".") ?></span>
                     </div>
-                    <button class="add-to-cart" value="<?php echo $details["produtoID"] ?>" title="Add to cart">
+                    <button class="add-to-cart button-hover" value="<?php echo $details["produtoID"] ?>" title="Add to cart">
                         Add to cart
                     </button> 
                 </ul>

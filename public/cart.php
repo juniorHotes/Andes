@@ -61,7 +61,7 @@
                             </div>
                             <div class="delete" id="<?php echo $i ?>">
                                 <a href="#">
-                                    <img width="24" src="assets/cruz.svg" alt="Delete item" title="Delete item">
+                                    <img class="button-hover" width="24" src="assets/cruz.svg" alt="Delete item" title="Delete item">
                                 </a>
                             </div>
                         </div>
@@ -76,12 +76,12 @@
                 
                 <div id="checkout">
                     <span>
-                        <a id="keep-buying" href="index.php">Keep buying</a>
+                        <a class="button-hover" id="keep-buying" href="index.php">Keep buying</a>
                     </span>
 
                     <form action="checkout.php" method="POST">
                         <input type="hidden" name="_total" value="">
-                        <input type="submit" value="checkout">
+                        <input class="button-hover" type="submit" value="checkout">
                     </form>
                 </div>
 

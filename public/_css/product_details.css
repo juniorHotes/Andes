@@ -1,7 +1,7 @@
 main {
     min-height: 100vh;
     margin-top: 116px;
-    color: var(--text-black);
+    color: var(--color-text-black);
 }
 #product-details {
     max-width: 700px;
@@ -17,7 +17,7 @@ main {
     grid-template-columns: 255px 1fr;
 }
 #product-details ul h4 {
-    color: var(--text-gray);
+    color: var(--color-text-gray);
 }
 #product-details ul p {
     font-weight: normal;
@@ -25,25 +25,20 @@ main {
 }
 #product-details ul span {
     font-size: 26px;
-    color: var(--text-red)
+    color: var(--color-text-red)
 }
 #product-details button.add-to-cart {
     padding: 8px 18px;
-    background-color: darkseagreen;
+    background-color: var(--color-button-green);
     position: absolute;
     bottom: 20px;
     right: 20px;
     color: white;
-    border-radius: 4px;
     border: none;
     outline: none;
     transition: 5ms;
     text-decoration-line: none;
 }
-#product-details button.add-to-cart:hover {
-    background-color: #78ac78;
-}
-
 #details {
     display: flex;
     flex-direction: column;

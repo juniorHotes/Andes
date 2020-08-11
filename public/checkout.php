@@ -88,8 +88,7 @@
                             <option value="10">10x Interest-free</option>
                         </select>
 
-                        <span></span>
-                        <input type="submit" value="Submit">
+                        <input class="button-hover" type="submit" value="Submit">
 
                         <input type="hidden" name="tipy-payment" value="_card">
                     </form> 
@@ -103,7 +102,7 @@
 
                         <input type="hidden" name="tipy-payment" value="_billet">
 
-                        <input type="submit" value="Submit">
+                        <input class="button-hover" type="submit" value="Submit">
                     </form> 
                 </div>
             <?php } ?>        

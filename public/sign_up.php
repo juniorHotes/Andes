@@ -77,7 +77,7 @@
                         <input type="text" name="usuario" placeholder="User name" required>
                         <input type="password" name="senha1" placeholder="Password (minimum 8 characters)" required>
                         <input type="password" name="senha2" placeholder="Repeat the password" required>
-                        <input type="submit" value="Save">
+                        <input class="button-hover" type="submit" value="Save">
 
                         <input type="hidden" name="ddd"     value="">
                         <input type="hidden" name="state"   value="">

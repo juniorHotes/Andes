@@ -47,7 +47,7 @@
                             <span><?php echo "USD " . number_format($pr["precounitario"], 2,",",".") ?></span>
                         </div>
                     </a> 
-                    <button class="add-to-cart" value="<?php echo $pr["produtoID"] ?>" title="Add to cart">
+                    <button class="add-to-cart button-hover" value="<?php echo $pr["produtoID"] ?>" title="Add to cart">
                         Add to cart
                     </button> 
                 </li> 
