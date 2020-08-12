@@ -1,7 +1,6 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    font-family: 'MuseoModerno', cursive;
 }
 :root {
     --color-text-black: #696969;
@@ -14,7 +13,12 @@
 body {
     background: #f7f7f7;
     position: relative;
+    font-family: 'MuseoModerno', cursive;
 }
+button, input, select, a {
+    font-family: 'MuseoModerno', cursive;
+}
+
 header {
     width: 100%;
     height: 90px;
@@ -74,14 +78,19 @@ header form button {
 }
 footer {
     width: 100%;
-    height: 40px;
-    background: rgb(94, 48, 5);
-    color: aliceblue;
+    height: 100px;
+    padding: 20px;
+    background: var(--color-text-black);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
     text-align: center;
 }
 /* Hover Global */
 .button-hover:hover {
-    filter: hue-rotate(310deg);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+}
+._hover:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }

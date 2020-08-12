@@ -41,7 +41,7 @@
             ?>
                 <li>
                     <a href="product_details.php?product_Id=<?php echo $pr["produtoID"] ?>">
-                        <div class="product-content">
+                        <div class="product-content _hover">
                             <img width="80" src="<?php echo $pr["imagempequena"] ?>" alt="imagem do produto">
                             <h3><?php echo $pr["nomeproduto"] ?></h3>
                             <span><?php echo "USD " . number_format($pr["precounitario"], 2,",",".") ?></span>

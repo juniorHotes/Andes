@@ -61,7 +61,7 @@
                             </div>
                             <div class="delete" id="<?php echo $i ?>">
                                 <a href="#">
-                                    <img class="button-hover" width="24" src="assets/cruz.svg" alt="Delete item" title="Delete item">
+                                    <img width="24" src="assets/cruz.svg" alt="Delete item" title="Delete item">
                                 </a>
                             </div>
                         </div>
