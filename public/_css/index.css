@@ -64,17 +64,24 @@ header form button {
     position: relative;
     margin: 0 20px;
 }
-#cart-items {
+.favorite-cart-content {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.circle-qdt {
     width: 24px;
     height: 24px;
     line-height: 26px;
     text-align: center;
     background-color: var(--color-button-green);
     border-radius: 50%;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
     color: white;
+}
+#favorite-items, #cart-items {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 footer {
     width: 100%;
