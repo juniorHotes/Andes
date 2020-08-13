@@ -53,6 +53,11 @@
         
         <?php require_once("partials/footer.php") ?>
         <script src="js/addToCart.js"></script>
+        <script>
+            const favoriteItems = document.querySelector('#favorite-items')
+            let fItems = JSON.parse(localStorage.getItem("favorites"))
+            favoriteItems.innerHTML = fItems.length;
+        </script>
     </body>
 </html>
 

@@ -94,6 +94,11 @@
     </body>
     <script src="js/cart.js"></script>
     <script src="js/addToCart.js"></script>
+    <script>
+        const favoriteItems = document.querySelector('#favorite-items')
+        let fItems = JSON.parse(localStorage.getItem("favorites"))
+        favoriteItems.innerHTML = fItems.length;
+    </script>
 </html>
 
 <?php mysqli_close($connect); ?>
