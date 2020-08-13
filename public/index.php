@@ -9,16 +9,22 @@
     if(isset($_GET["search"])) {
         $product_name    = urlencode($_GET["search"]);
         $products       .= "WHERE nomeproduto LIKE '%{$product_name}%' "; 
+    } else if(isset($_GET["favorites"])) {
+        $p_ids = $_GET["favorites"];
+
+        $split1 = explode(',', $p_ids);
+
+        for ($i=0; $i < sizeof($split1); $i++) { 
+            $split1[$i] = 
+        }
+
+        print_r($split1);
     }
     $query = mysqli_query($connect, $products);
     
     if(!$query) {
         die("Falha na consulta ao banco de dados");   
-    }    
-
-    function myFunction() {
-    }
-    
+    }     
 ?>
 
 
@@ -47,6 +53,8 @@
                             <span><?php echo "USD " . number_format($pr["precounitario"], 2,",",".") ?></span>
                         </div>
                     </a> 
+                    <button class="button-heart" value="<?php echo $pr["produtoID"] ?>" title="add favorite">
+                    </button>
                     <button class="add-to-cart button-hover" value="<?php echo $pr["produtoID"] ?>" title="Add to cart">
                         Add to cart
                     </button> 
@@ -56,6 +64,12 @@
         </main>        
         <?php require_once("partials/footer.php") ?>
         <script src="js/addToCart.js"></script>
+        <script src="js/addToFavorite.js"></script>
+        <script>
+            const favoriteItems = document.querySelector('#favorite-items')
+            let fItems = JSON.parse(localStorage.getItem("favorites"))
+            favoriteItems.innerHTML = fItems.length;
+        </script>
     </body>
 </html>
 
