@@ -49,3 +49,27 @@ main ul li img {
     float: left; 
     margin-right:22px;
 }
+
+/* Button favorite product */
+.button-heart {
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    right: 18px;
+    top: 16px;
+    text-align: center;
+    background: url("../assets/coracao-product1.svg") no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    transform-origin: center;
+    outline: none;
+}
+.button-heart:hover {
+    background: url("../assets/coracao-product2.svg") no-repeat;
+    background-size: contain;
+}
+.favorited {
+    background: url("../assets/coracao-product2.svg") no-repeat;
+    background-size: contain;
+}
