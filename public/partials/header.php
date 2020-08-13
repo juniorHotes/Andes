@@ -28,12 +28,19 @@
         <a href="login.php">Logon</a>
     <?php } ?>
 
-    <div id="cart-content">
-        <a href="cart.php">
-        <img width="42px" src="assets/carrinho.svg" alt="">
-        <p id="cart-items">0</p>
-        </a>
+    <div class="favorite-cart-content">
+        <div id="favorite-content">
+            <a href="">
+                <img width="42px" src="assets/coracao-header.svg" alt="Favorites" title="Favorites">
+                <p id="favorite-items" class="circle-qdt">0</p>
+            </a>
+        </div>
+
+        <div id="cart-content">
+            <a href="cart.php">
+                <img width="42px" src="assets/carrinho.svg" alt="Cart" title="Cart">
+                <p id="cart-items" class="circle-qdt">0</p>
+            </a>
+        </div>
     </div>
-
-
 </header>
