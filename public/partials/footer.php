@@ -1,3 +1,3 @@
 <footer>
-    <p>ANDES &eacute; uma empresa fict&iacute;cia, usada para exercitar PHP com MySQL.</p>
+    <p>ANDES is a fictional company, used to exercise PHP with MySQL.</p>
 </footer>
