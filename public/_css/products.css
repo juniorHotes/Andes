@@ -73,3 +73,10 @@ main ul li img {
     background: url("../assets/coracao-product2.svg") no-repeat;
     background-size: contain;
 }
+main h1 {
+    width: 90%;
+    margin: 0 auto;
+    background-color: var(--color-button-green);
+    color: white;
+    text-align:center;
+}
