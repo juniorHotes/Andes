@@ -135,7 +135,7 @@
     </script>
     <script>
         const favoriteItems = document.querySelector('#favorite-items')
-        let fItems = JSON.parse(localStorage.getItem("favorites"))
+        let fItems = localStorage.getItem("favorites").split(',')
         favoriteItems.innerHTML = fItems.length;
     </script>
 </html>
