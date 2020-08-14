@@ -30,7 +30,7 @@
 
     <div class="favorite-cart-content">
         <div id="favorite-content">
-            <a href="">
+            <a href="index.php?favorites=">
                 <img width="42px" src="assets/coracao-header.svg" alt="Favorites" title="Favorites">
                 <p id="favorite-items" class="circle-qdt">0</p>
             </a>
