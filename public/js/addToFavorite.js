@@ -20,18 +20,17 @@ productElement.forEach((element) => {
         }
 
         favorites.innerHTML = favoriteds.length
-        let jsonStr = JSON.stringify(favoriteds)
-        localStorage.setItem("favorites", jsonStr)
-
-        favorites.parentElement.setAttribute("href", "index.php?favorites=" + jsonStr)
-        console.log(favorites.parentElement)
-})
+        localStorage.setItem("favorites", favoriteds)
+        favorites.parentElement.setAttribute("href", "index.php?favorites=" + favoriteds)     
+    })
 })
 
 function getFavorites() {
     if (localStorage.getItem("favorites") == null) return
     
-    favoriteds = JSON.parse(localStorage.getItem("favorites"))
+    favoriteds = localStorage.getItem("favorites").split(',')
+
+    favorites.parentElement.setAttribute("href", "index.php?favorites=" + favoriteds)
 
     productElement.forEach((element) => {
     
@@ -44,3 +43,4 @@ function getFavorites() {
         }
     })
 }
+//localStorage.removeItem('favorites')
