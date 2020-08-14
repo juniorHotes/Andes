@@ -3,31 +3,27 @@
     require_once("../connect/connection.php");
     
     session_start();
-    
-    $products = "SELECT produtoID, nomeproduto, precounitario, imagempequena FROM produtos ";
 
+    $products = "SELECT produtoID, nomeproduto, precounitario, imagempequena FROM produtos ";
+    $p_ids = [];
     if(isset($_GET["search"])) {
-        $product_name    = urlencode($_GET["search"]);
-        $products       .= "WHERE nomeproduto LIKE '%{$product_name}%' "; 
+        $product_name = urlencode($_GET["search"]);
+        $products    .= "WHERE nomeproduto LIKE '%{$product_name}%' "; 
     } else if(isset($_GET["favorites"])) {
         $p_ids = $_GET["favorites"];
-
-        $split1 = explode(',', $p_ids);
-
-        for ($i=0; $i < sizeof($split1); $i++) { 
-            $split1[$i] = 
+        
+        if($p_ids) {
+            $products  .= "WHERE produtoID IN ({$p_ids}) ";
         }
-
-        print_r($split1);
     }
-    $query = mysqli_query($connect, $products);
     
+    $query = mysqli_query($connect, $products);
+
     if(!$query) {
         die("Falha na consulta ao banco de dados");   
-    }     
+    }        
+    
 ?>
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,7 +39,8 @@
         <main>
             <ul>
             <?php
-                while($pr = mysqli_fetch_assoc($query)) {
+                if($p_ids != 0) {
+                    while($pr = mysqli_fetch_assoc($query))  {
             ?>
                 <li>
                     <a href="product_details.php?product_Id=<?php echo $pr["produtoID"] ?>">
@@ -59,17 +56,17 @@
                         Add to cart
                     </button> 
                 </li> 
-            <?php } ?>
+            <?php 
+                    } 
+                } else {
+            ?>
             </ul>
+                <h1>You have not added any products to favorites</h1>
+            <?php } ?>
         </main>        
         <?php require_once("partials/footer.php") ?>
         <script src="js/addToCart.js"></script>
         <script src="js/addToFavorite.js"></script>
-        <script>
-            const favoriteItems = document.querySelector('#favorite-items')
-            let fItems = JSON.parse(localStorage.getItem("favorites"))
-            favoriteItems.innerHTML = fItems.length;
-        </script>
     </body>
 </html>
 
