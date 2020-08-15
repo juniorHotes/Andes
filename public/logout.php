@@ -8,10 +8,7 @@
         unset($_SESSION["usuario"]);       
         // Destroi todas as variveis de sessão 
         session_destroy();
-    }
-       
-    header("location:index.php");
-    
+    }    
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,12 +19,31 @@
         <link rel="stylesheet" href="_css/login_style.css">
         <title>Andes Coffee</title>
     </head>
+    <style>
+        main {
+            width: 90%;
+            margin: 110px auto;
+        }
+        main h1 {
+            font-size: 40px;
+            text-align: center;
+            background-color: white;
+            padding: 50px;
+            color: var(--color-button-green);
+        }
+    </style>
     <body>
         <?php require_once("partials/header.php"); ?>
 
         <main>
+            <h1>You have been disconnected</h1>
         </main>        
         <?php require_once("partials/footer.php") ?>
     </body>
+    <script>
+        setTimeout(() => {
+            location = "index.php"
+        }, 2000);
+    </script>
 </html>
 <?php mysqli_close($connect); ?>
