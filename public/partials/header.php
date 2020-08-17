@@ -34,5 +34,20 @@
                 </a>
             <?php } ?>
         </div>
+        
+        <?php 
+            if(isset($_SESSION['nivel'])) {
+                $is_admin = $_SESSION['nivel'];
+                if($is_admin == 'admin') {
+        ?>
+        <div id="config-content">
+            <a href="config.php">
+                <img width="42px" src="assets/configuracoes.svg" alt="Configurations" title="Configurations">
+            </a>
+        </div>
+        <?php 
+                }
+            }    
+        ?>
     </div>
 </header>
