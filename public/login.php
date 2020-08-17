@@ -10,7 +10,7 @@
         
         $access = "SELECT * ";
         $access .= "FROM clientes ";
-        $access .= "WHERE usuario = '{$username}' and senha = '{$password}' ";
+        $access .= "WHERE usuario IN ('{$username}','{$password}','nivel') ";
         
         $logon = mysqli_query($connect, $access);
         
@@ -24,8 +24,9 @@
             $not_registered = '<h2 style="color:red; margin-bottom:20px">User not registered</h2>';
         } else {
             $_SESSION["usuario"] = $user["clienteID"];
-           header("location:index.php");
-        }    
+            $_SESSION["nivel"] = $user["nivel"];
+            header("location:index.php");
+        }   
     }
 
     $checkout = "";
