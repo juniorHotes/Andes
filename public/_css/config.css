@@ -1,0 +1,84 @@
+main {
+    min-height: 100vh;
+    margin: 140px auto;
+}
+.content {
+    width: 400px;
+    background-color: white;
+    margin: 140px auto;
+    padding: 20px;
+}
+h2 {
+    margin-bottom: 40px;
+}
+.content form {
+    display: flex;
+    flex-direction: column;
+}
+.content form input, 
+label.up-label, 
+textarea, select {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.content form input[type=submit] {
+    width: 100%;
+    border: none;
+    background: #834b02;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+span {
+    color: red;
+}
+label.up-label {
+    border: 1px solid var(--color-button-green);
+    cursor: pointer;
+    background-color: var(--color-button-green);
+    color: white;
+    transition: 0.3s ease-out;
+}
+label.up-label:hover {
+    border: 1px solid #666;
+    background-color: white;
+    color: black;
+}
+.image-preview {
+    width: 100%;
+    border-top: 2px dotted #999;
+    border-right: 2px dotted #999;
+    border-left: 2px dotted #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.image-preview__image {
+    width: 100%;
+    display: none;
+}
+span.image-preview__default-text {
+    color: #999;
+}
+strong {
+    font-size: 12px;
+}
+h5.img-name {
+    background: #999;
+    color: white;
+    padding: 4px 10px;
+    margin-bottom: 20px;
+    font-family: Arial;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
