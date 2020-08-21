@@ -16,7 +16,7 @@ body {
     position: relative;
     font-family: 'MuseoModerno', cursive;
 }
-button, input, select, a {
+button, input, select, a, textarea {
     font-family: 'MuseoModerno', cursive;
 }
 
