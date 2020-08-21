@@ -41,7 +41,7 @@
                 if($is_admin == 'admin') {
         ?>
         <div id="config-content">
-            <a href="config.php">
+            <a href="admin.php">
                 <img width="42px" src="assets/configuracoes.svg" alt="Configurations" title="Configurations">
             </a>
         </div>
