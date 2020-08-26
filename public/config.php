@@ -10,7 +10,7 @@
         require_once("php/register_new_product.php");
 
     } else if($config_type == "ChangeProduct") {
-      //  require_once("php/change_product.php");
+        require_once("php/change_product.php");
 
     } else if($config_type == "RegisterSupplier") {
       //  require_once("php/register-supplier.php");
@@ -23,6 +23,18 @@
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="_css/index.css">
         <link rel="stylesheet" href="_css/config.css">
+        <?php
+            if($config_type == "RegisterNewProduct") {
+                echo "<link rel='stylesheet' href='_css/register_new_product.css'>";
+        
+            } else if($config_type == "ChangeProduct") {
+                echo "<link rel='stylesheet' href='_css/change_product.css'>";
+        
+            } else if($config_type == "RegisterSupplier") {
+                //require_once("");
+            }
+        ?> 
+
         <title>Andes Coffee - Register new product</title>
     </head>
     <body>
@@ -36,7 +48,7 @@
                         require_once("partials/form_register_new_product.php");
                 
                     } else if($config_type == "ChangeProduct") {
-                       // require_once("partials/change_product.php");
+                        require_once("partials/form_change_product.php");
                 
                     } else if($config_type == "RegisterSupplier") {
                         //require_once("partials/register-supplier.php");
