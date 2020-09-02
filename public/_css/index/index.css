@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-text-black: #696969;
+    --color-text-gray: #a1a1a1;
+    --color-text-wheat: #f5deb3;
+    --color-button-green: #4CAF50;
+    --color-button-brown: #834b02;
+    --color-text-red: #eb6948;
+}
+body {
+    width: 100%;
+    background: #f7f7f7;
+    position: relative;
+    font-family: 'MuseoModerno', cursive;
+}
+button, input, select, a, textarea {
+    font-family: 'MuseoModerno', cursive;
+}
+
+header {
+    width: 100%;
+    height: 90px;
+    background: var(--color-button-brown);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+header h1 {
+    color: var(--color-text-wheat);
+    font-size: 42px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    padding-left: 40px;
+    font-weight: 800;
+}
+header form {
+    display: flex;
+}
+header input {
+    padding: 10px;
+    color: var(--color-text-black);
+    width: 400px;
+    border: none;
+    outline: none;
+    font-weight: 700;
+}
+header form button {
+    width: 50px;
+    border: none;
+    margin: 0 40px 0 -5px;
+    background: white url('../../assets/lupa.jpg') center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+ header p, a {
+    text-decoration: none;
+    color: var(--color-text-wheat);
+}
+#cart-content {
+    position: relative;
+    margin: 0 20px;
+}
+.links-content {
+    margin-right: 20px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.circle-qdt {
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    text-align: center;
+    background-color: var(--color-button-green);
+    border-radius: 50%;
+    color: white;
+}
+#favorite-items, #cart-items {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#user-content {
+    width: 50px;
+    text-align: center;
+}
+#user-content p {
+    line-height: 0px;
+}
+#config-content {
+    margin: 0 18px;
+}
+footer {
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    margin-top: 40px;
+    background: var(--color-text-black);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+    text-align: center;
+}
+/* Hover Global */
+.button-hover:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+._hover:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
