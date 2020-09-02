@@ -7,7 +7,7 @@
     if(isset($_GET['product_Id'])) {
         $productID = $_GET['product_Id'];
     } else {
-        Header('location: index.php');
+        Header('location:index.php');
     }
     
     $product = "SELECT * FROM produtos WHERE produtoID = {$productID}";
@@ -27,12 +27,12 @@
     <head>
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="_css/index.css">
-        <link rel="stylesheet" href="_css/product_details.css">
+        <link rel="stylesheet" href="_css/index/index.css">
+        <link rel="stylesheet" href="_css/product_details/product_details.css">
         <title>Andes - Product details</title>
     </head>
     <body>
-        <?php require_once("partials/header.php"); ?>
+        <?php require_once("partials/index/header.php"); ?>
 
         <main>
             <div id="product-details">
@@ -51,8 +51,8 @@
             </div>
         </main>
         
-        <?php require_once("partials/footer.php") ?>
-        <script src="js/addToCart.js"></script>
+        <?php require_once("partials/index/footer.php") ?>
+        <script src="js/index/addToCart.js"></script>
         <script>
             const favoriteItems = document.querySelector('#favorite-items');
             

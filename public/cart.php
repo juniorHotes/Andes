@@ -4,7 +4,7 @@
 
     session_start();
     
-    require_once("php/purchase_infor.php");
+    require_once("php/purchase/purchase_infor.php");
 
 ?>
 
@@ -13,12 +13,12 @@
     <head>
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="_css/index.css">
-        <link rel="stylesheet" href="_css/cart.css">
+        <link rel="stylesheet" href="_css/index/index.css">
+        <link rel="stylesheet" href="_css/cart/cart.css">
         <title>Andes - you cart</title>
     </head>
     <body>
-        <?php require_once("partials/header.php"); ?>
+        <?php require_once("partials/index/header.php"); ?>
 
         <main>
             <?php if(isset($_COOKIE[$cookie_name])) { ?>
@@ -90,10 +90,10 @@
             <?php } ?>
 
         </main>
-        <?php require_once("partials/footer.php") ?>
+        <?php require_once("partials/index/footer.php") ?>
     </body>
-    <script src="js/cart.js"></script>
-    <script src="js/addToCart.js"></script>
+    <script src="js/cart/cart.js"></script>
+    <script src="js/index/addToCart.js"></script>
     <script>
         const favoriteItems = document.querySelector('#favorite-items');
 

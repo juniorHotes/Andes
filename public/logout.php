@@ -15,8 +15,8 @@
     <head>
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="_css/index.css">
-        <link rel="stylesheet" href="_css/login_style.css">
+        <link rel="stylesheet" href="_css/index/index.css">
+        <link rel="stylesheet" href="_css/login/login_style.css">
         <title>Andes Coffee</title>
     </head>
     <style>
@@ -33,12 +33,12 @@
         }
     </style>
     <body>
-        <?php require_once("partials/header.php"); ?>
+        <?php require_once("partials/index/header.php"); ?>
 
         <main>
             <h1>You have been disconnected</h1>
         </main>        
-        <?php require_once("partials/footer.php") ?>
+        <?php require_once("partials/index/footer.php") ?>
     </body>
     <script>
         setTimeout(() => {

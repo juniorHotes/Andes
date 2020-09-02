@@ -23,12 +23,12 @@
     <head>
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="_css/index.css">
-        <link rel="stylesheet" href="_css/checkout.css">
+        <link rel="stylesheet" href="_css/index/index.css">
+        <link rel="stylesheet" href="_css/checkout/checkout.css">
         <title>Andes - Checkout</title>
     </head>
     <body>
-        <?php require_once("partials/header.php"); ?>
+        <?php require_once("partials/index/header.php"); ?>
 
         <main>
             <?php if($user == false) { 
@@ -108,9 +108,9 @@
             <?php } ?>        
         </main>
 
-        <?php require_once("partials/footer.php") ?>
+        <?php require_once("partials/index/footer.php") ?>
     </body>
-    <script src="js/addToCart.js"></script>
+    <script src="js/index/addToCart.js"></script>
     <script>
         const inputRadio = document.querySelectorAll('input[type=radio]')
 

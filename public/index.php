@@ -29,12 +29,12 @@
     <head>
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="_css/index.css">
-        <link rel="stylesheet" href="_css/products.css">
+        <link rel="stylesheet" href="_css/index/index.css">
+        <link rel="stylesheet" href="_css/index/products.css">
         <title>Andes Coffee</title>
     </head>
     <body>
-        <?php require_once("partials/header.php"); ?>
+        <?php require_once("partials/index/header.php"); ?>
 
         <main>
             <ul>
@@ -64,9 +64,9 @@
                 <h1>You have not added any products to favorites</h1>
             <?php } ?>
         </main>        
-        <?php require_once("partials/footer.php") ?>
-        <script src="js/addToCart.js"></script>
-        <script src="js/addToFavorite.js"></script>
+        <?php require_once("partials/index/footer.php") ?>
+        <script src="js/index/addToCart.js"></script>
+        <script src="js/index/addToFavorite.js"></script>
     </body>
 </html>
 

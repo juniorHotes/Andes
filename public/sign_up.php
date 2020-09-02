@@ -47,12 +47,12 @@
     <head>
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="_css/index.css">
-        <link rel="stylesheet" href="_css/login_style.css">
+        <link rel="stylesheet" href="_css/index/index.css">
+        <link rel="stylesheet" href="_css/login/login_style.css">
         <title>Andes Coffee - Sign up</title>
     </head>
     <body>
-        <?php require_once("partials/header.php"); ?>
+        <?php require_once("partials/index/header.php"); ?>
 
         <main>
             <div class="login-content show-login">
@@ -87,12 +87,12 @@
             </div>
         </main>
                 
-        <?php require_once("partials/footer.php") ?>
+        <?php require_once("partials/index/footer.php") ?>
     </body>
     <script src="js/jquery.js"></script>
     <script src="js/jquery.maskedinput.js"></script>
-    <script src="js/signup_validation.js"></script>
-    <script src="js/addToCart.js"></script>
+    <script src="js/login/signup_validation.js"></script>
+    <script src="js/index/addToCart.js"></script>
     <script type="text/javascript">
         const userNameInput = document.querySelector('input[name=usuario]')        
         let varr = <?php echo json_encode($users) ?>;

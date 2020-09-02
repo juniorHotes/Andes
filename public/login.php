@@ -41,12 +41,12 @@
     <head>
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="_css/index.css">
-        <link rel="stylesheet" href="_css/login_style.css">
+        <link rel="stylesheet" href="_css/index/index.css">
+        <link rel="stylesheet" href="_css/login/login_style.css">
         <title>Andes Coffee - login</title>
     </head>
     <body>
-        <?php require_once("partials/header.php"); ?>
+        <?php require_once("partials/index/header.php"); ?>
 
         <main>
             <div class="login-content">
@@ -65,8 +65,8 @@
                 </div>
             </div>
         </main>        
-        <?php require_once("partials/footer.php") ?>
-        <script src="js/addToCart.js"></script>
+        <?php require_once("partials/index/footer.php") ?>
+        <script src="js/index/addToCart.js"></script>
         <script>
             const favoriteItems = document.querySelector('#favorite-items');
 
