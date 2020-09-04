@@ -1,11 +1,6 @@
-main {
-    min-height: 100vh;
-    margin: 140px auto;
-}
 .login-window {
     width: 400px;
     background-color: white;
-    margin: 140px auto;
     padding: 20px;
 }
 .login-window form {
