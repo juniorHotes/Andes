@@ -14,16 +14,11 @@
         <title>Andes Coffee - Config</title>
     </head>
     <style>
-        main {
-            max-width: 1150px;
-            min-height: 100vh;
-            margin: 0 auto;
-        }
         main ul {
             display: grid;
             list-style: none;
             grid-template-columns: 1fr 1fr 1fr; 
-            margin-top: 100px;   
+            padding: 0;
         }
         main ul li {
             position: relative;
