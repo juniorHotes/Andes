@@ -38,12 +38,18 @@
             <div class="content">
                 <div id="product-details">
                     <ul>
-                        <img src="<?php echo $details['imagemgrande']; ?>" alt="Imagem do produto">
+                        <img width="225" src="<?php echo $details['imagemgrande']; ?>" alt="Imagem do produto">
                         <div id="details">
-                            <h2><?php echo $details['nomeproduto']; ?></h2>
-                            <h4><?php echo $details['descricao']; ?></h4>
-                            <p><?php echo $details['estoque'] . " Available units"; ?></p>
-                            <span><?php echo "USD " . number_format($details['precounitario'], 2,",",".") ?></span>
+                            <div>
+                                <h2><?php echo $details['nomeproduto']; ?></h2>
+                            </div>
+                            <div>
+                                <h4><?php echo $details['descricao']; ?></h4>
+                            </div>
+                            <div>
+                                <p><?php echo $details['estoque'] . " Available units"; ?></p>
+                                <span><?php echo "USD " . number_format($details['precounitario'], 2,",",".") ?></span>
+                            </div>
                         </div>
                         <button class="add-to-cart button-hover" value="<?php echo $details["produtoID"] ?>" title="Add to cart">
                             Add to cart
