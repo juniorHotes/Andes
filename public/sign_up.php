@@ -55,34 +55,36 @@
         <?php require_once("partials/index/header.php"); ?>
 
         <main>
-            <div class="login-content show-login">
-                <div class="login-window">
-                    <form action="sign_up.php" method="POST">
-                        <h2>Create your user</h2>
-                        <input type="text" autocomplet name="nomecompleto" placeholder="Full name" required autofocus>
-                        <input type="text" name="endereco" placeholder="Adress" required>
-                        <input type="text" name="complemento" placeholder="Complement">
-                        <input type="text" name="numero" placeholder="Number" required>
+            <div class="content">
+                <div class="login-content show-login">
+                    <div class="login-window">
+                        <form action="sign_up.php" method="POST">
+                            <h2>Create your user</h2>
+                            <input type="text" autocomplet name="nomecompleto" placeholder="Full name" required autofocus>
+                            <input type="text" name="endereco" placeholder="Adress" required>
+                            <input type="text" name="complemento" placeholder="Complement">
+                            <input type="text" name="numero" placeholder="Number" required>
 
-                        <select id="estado" required>
-                            <option value>State</option>
-                        </select>
+                            <select id="estado" required>
+                                <option value>State</option>
+                            </select>
 
-                        <select id="cidade" disabled="disabled" required>
-                        </select>
+                            <select id="cidade" disabled="disabled" required>
+                            </select>
 
-                        <input type="text" name="cep" placeholder="CEP" required>
-                        <input type="tel" maxlength="14" placeholder="Phone" name="telefone" required>
-                        <input type="email" name="email" placeholder="Email exe: youremail@mail.com" required>
-                        <input type="text" name="usuario" placeholder="User name" required>
-                        <input type="password" name="senha1" placeholder="Password (minimum 8 characters)" required>
-                        <input type="password" name="senha2" placeholder="Repeat the password" required>
-                        <input class="button-hover" type="submit" value="Save">
+                            <input type="text" name="cep" placeholder="CEP" required>
+                            <input type="tel" maxlength="14" placeholder="Phone" name="telefone" required>
+                            <input type="email" name="email" placeholder="Email exe: youremail@mail.com" required>
+                            <input type="text" name="usuario" placeholder="User name" required>
+                            <input type="password" name="senha1" placeholder="Password (minimum 8 characters)" required>
+                            <input type="password" name="senha2" placeholder="Repeat the password" required>
+                            <input class="button-hover" type="submit" value="Save">
 
-                        <input type="hidden" name="ddd"     value="">
-                        <input type="hidden" name="state"   value="">
-                        <input type="hidden" name="city"    value="">
-                    </form>
+                            <input type="hidden" name="ddd"     value="">
+                            <input type="hidden" name="state"   value="">
+                            <input type="hidden" name="city"    value="">
+                        </form>
+                    </div>
                 </div>
             </div>
         </main>

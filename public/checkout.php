@@ -31,81 +31,82 @@
         <?php require_once("partials/index/header.php"); ?>
 
         <main>
-            <?php if($user == false) { 
-                
-                header("location:login.php?Checkout")
-            ?>
-            <?php } else { ?>
-
-                <div id="payment-content">
-                    <h2>Form of payment</h2>
-                    <div class="tipy-pay">
-                        <div>
-                            <input type="radio" name="tipy-payment" id="credit-card" value="credit-card" checked>
-                            <label for="credit-card">Credit card</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="tipy-payment" id="billet" value="billet">
-                            <label for="billet">Billet</label>
-                        </div>                    
-                    </div>
-
-                    <strong id="purchase-price">Total purchase amount: $<?php echo $total ?></strong>
-                    <input type="hidden" name="total" value="<?php echo $total ?>">
-
-                    <form action="checkout.php" class="credit-card show">                        
-                        <div class="flags">
-                            <div class="flags-title">Credit cards</div>
-                            <div class="line">
-                                <img src="assets/visa.svg" width="48" alt="Visa" title="Visa">
-                                <img src="assets/mastercard.svg" width="48" alt="Mastercard" title="Mastercard">
-                                <img src="assets/DinersClub.png" width="48" alt="Dinners" title="Dinners">
-                                <img src="assets/elo.png" width="48" alt="Elo" title="Elo">
+            <div class="content">
+                <?php if($user == false) { 
+                    
+                    header("location:login.php?Checkout")
+                ?>
+                <?php } else { ?>
+                    <div id="payment-content">
+                        <h2>Form of payment</h2>
+                        <div class="tipy-pay">
+                            <div>
+                                <input type="radio" name="tipy-payment" id="credit-card" value="credit-card" checked>
+                                <label for="credit-card">Credit card</label>
                             </div>
+                            <div>
+                                <input type="radio" name="tipy-payment" id="billet" value="billet">
+                                <label for="billet">Billet</label>
+                            </div>                    
                         </div>
 
-                        <label for="card-number">Card number</label>
-                        <input type="text" name="card-number" value="" placeholder="Ex: 0123456789" autofocus>
+                        <strong id="purchase-price">Total purchase amount: $<?php echo $total ?></strong>
+                        <input type="hidden" name="total" value="<?php echo $total ?>">
 
-                        <label for="security-code">Security code</label>
-                        <input type="text" name="security-code" value="" placeholder="Ex: 123">
+                        <form action="checkout.php" class="credit-card show">                        
+                            <div class="flags">
+                                <div class="flags-title">Credit cards</div>
+                                <div class="line">
+                                    <img src="assets/visa.svg" width="48" alt="Visa" title="Visa">
+                                    <img src="assets/mastercard.svg" width="48" alt="Mastercard" title="Mastercard">
+                                    <img src="assets/DinersClub.png" width="48" alt="Dinners" title="Dinners">
+                                    <img src="assets/elo.png" width="48" alt="Elo" title="Elo">
+                                </div>
+                            </div>
 
-                        <label for="expiration-date">Expiration date</label>
-                        <input type="month" name="expiration-date" value="">
+                            <label for="card-number">Card number</label>
+                            <input type="text" name="card-number" value="" placeholder="Ex: 0123456789" autofocus>
 
-                        <label for="installments">Number of installments</label>
-                        
-                        <select name="installments" id="installments">
-                            <option value="1">1x Interest-free</option>
-                            <option value="2">2x Interest-free</option>
-                            <option value="3">3x Interest-free</option>
-                            <option value="4">4x Interest-free</option>
-                            <option value="5">5x Interest-free</option>
-                            <option value="6">6x Interest-free</option>
-                            <option value="7">7x Interest-free</option>
-                            <option value="8">8x Interest-free</option>
-                            <option value="9">9x Interest-free</option>
-                            <option value="10">10x Interest-free</option>
-                        </select>
+                            <label for="security-code">Security code</label>
+                            <input type="text" name="security-code" value="" placeholder="Ex: 123">
 
-                        <input class="button-hover" type="submit" value="Submit">
+                            <label for="expiration-date">Expiration date</label>
+                            <input type="month" name="expiration-date" value="">
 
-                        <input type="hidden" name="tipy-payment" value="_card">
-                    </form> 
+                            <label for="installments">Number of installments</label>
+                            
+                            <select name="installments" id="installments">
+                                <option value="1">1x Interest-free</option>
+                                <option value="2">2x Interest-free</option>
+                                <option value="3">3x Interest-free</option>
+                                <option value="4">4x Interest-free</option>
+                                <option value="5">5x Interest-free</option>
+                                <option value="6">6x Interest-free</option>
+                                <option value="7">7x Interest-free</option>
+                                <option value="8">8x Interest-free</option>
+                                <option value="9">9x Interest-free</option>
+                                <option value="10">10x Interest-free</option>
+                            </select>
 
-                    <form action="checkout.php" class="billet">
-                        <label for="full-name">Full name</label>
-                        <input type="text" name="full-name" value="" placeholder="" autofocus>
+                            <input class="button-hover" type="submit" value="Submit">
 
-                        <label for="cpf">CPF</label>
-                        <input type="number" name="cpf" value="" placeholder="Ex: 04200841347">
+                            <input type="hidden" name="tipy-payment" value="_card">
+                        </form> 
 
-                        <input type="hidden" name="tipy-payment" value="_billet">
+                        <form action="checkout.php" class="billet">
+                            <label for="full-name">Full name</label>
+                            <input type="text" name="full-name" value="" placeholder="" autofocus>
 
-                        <input class="button-hover" type="submit" value="Submit">
-                    </form> 
-                </div>
-            <?php } ?>        
+                            <label for="cpf">CPF</label>
+                            <input type="number" name="cpf" value="" placeholder="Ex: 04200841347">
+
+                            <input type="hidden" name="tipy-payment" value="_billet">
+
+                            <input class="button-hover" type="submit" value="Submit">
+                        </form> 
+                    </div>
+                <?php } ?>    
+            <div>    
         </main>
 
         <?php require_once("partials/index/footer.php") ?>

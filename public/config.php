@@ -45,7 +45,6 @@
 
         <main>
             <div class="content">
-            
                 <?php
                     if($config_type == "RegisterNewProduct") {
                         require_once("partials/admin/form_register_new_product.php");
@@ -58,7 +57,8 @@
                     }
                  ?> 
             </div>
-        </main>        
+        </main>    
+            
         <?php require_once("partials/index/footer.php") ?>
         <script src="js/index/addToCart.js"></script>
         <script src="js/index/addToFavorite.js"></script>

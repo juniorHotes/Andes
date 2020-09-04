@@ -35,19 +35,21 @@
         <?php require_once("partials/index/header.php"); ?>
 
         <main>
-            <div id="product-details">
-                <ul>
-                    <img src="<?php echo $details['imagemgrande']; ?>" alt="Imagem do produto">
-                    <div id="details">
-                        <h2><?php echo $details['nomeproduto']; ?></h2>
-                        <h4><?php echo $details['descricao']; ?></h4>
-                        <p><?php echo $details['estoque'] . " Available units"; ?></p>
-                        <span><?php echo "USD " . number_format($details['precounitario'], 2,",",".") ?></span>
-                    </div>
-                    <button class="add-to-cart button-hover" value="<?php echo $details["produtoID"] ?>" title="Add to cart">
-                        Add to cart
-                    </button> 
-                </ul>
+            <div class="content">
+                <div id="product-details">
+                    <ul>
+                        <img src="<?php echo $details['imagemgrande']; ?>" alt="Imagem do produto">
+                        <div id="details">
+                            <h2><?php echo $details['nomeproduto']; ?></h2>
+                            <h4><?php echo $details['descricao']; ?></h4>
+                            <p><?php echo $details['estoque'] . " Available units"; ?></p>
+                            <span><?php echo "USD " . number_format($details['precounitario'], 2,",",".") ?></span>
+                        </div>
+                        <button class="add-to-cart button-hover" value="<?php echo $details["produtoID"] ?>" title="Add to cart">
+                            Add to cart
+                        </button> 
+                    </ul>
+                </div>
             </div>
         </main>
         

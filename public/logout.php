@@ -36,8 +36,11 @@
         <?php require_once("partials/index/header.php"); ?>
 
         <main>
-            <h1>You have been disconnected</h1>
-        </main>        
+            <div class="content">
+                <h1>You have been disconnected</h1>
+            </div>
+        </main> 
+               
         <?php require_once("partials/index/footer.php") ?>
     </body>
     <script>

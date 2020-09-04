@@ -51,29 +51,31 @@
         <?php require_once("partials/index/header.php"); ?>
 
         <main>
-            <ul>
-                <li>
-                    <a href="config.php?_configType=RegisterNewProduct">
-                        <div class="content _hover">
-                            <h2>Register new product</h2>
-                        </div>
-                    </a> 
-                </li> 
-                <li>
-                    <a href="config.php?_configType=ChangeProduct">
-                        <div class="content _hover">
-                            <h2>Change product</h2>
-                        </div>
-                    </a> 
-                </li> 
-                <li>
-                    <a href="config.php?_configType=RegisterSupplier">
-                        <div class="content _hover">
-                            <h2>Register supplier</h2>
-                        </div>
-                    </a> 
-                </li> 
-            </ul>
+            <div class="content">
+                <ul>
+                    <li>
+                        <a href="config.php?_configType=RegisterNewProduct">
+                            <div class="content _hover">
+                                <h2>Register new product</h2>
+                            </div>
+                        </a> 
+                    </li> 
+                    <li>
+                        <a href="config.php?_configType=ChangeProduct">
+                            <div class="content _hover">
+                                <h2>Change product</h2>
+                            </div>
+                        </a> 
+                    </li> 
+                    <li>
+                        <a href="config.php?_configType=RegisterSupplier">
+                            <div class="content _hover">
+                                <h2>Register supplier</h2>
+                            </div>
+                        </a> 
+                    </li> 
+                </ul>
+            </div>
         </main>        
         <?php require_once("partials/index/footer.php") ?>
         <script src="js/index/addToCart.js"></script>
