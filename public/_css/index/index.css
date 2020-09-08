@@ -11,10 +11,18 @@
     --color-text-red: #eb6948;
 }
 body {
-    width: 100%;
     background: #f7f7f7;
     position: relative;
     font-family: 'MuseoModerno', cursive;
+}
+main {
+    width: 100%;
+    min-height: 100vh;
+}
+.content {
+    max-width: 1156px;
+    padding: 20px;
+    margin: 100px auto;
 }
 button, input, select, a, textarea {
     font-family: 'MuseoModerno', cursive;
@@ -35,7 +43,7 @@ header h1 {
     color: var(--color-text-wheat);
     font-size: 42px;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-    padding-left: 40px;
+    margin: 0 16px 0 20px;
     font-weight: 800;
 }
 header form {
@@ -61,6 +69,7 @@ header form button {
     text-decoration: none;
     color: var(--color-text-wheat);
 }
+/* Buttons */
 #cart-content {
     position: relative;
     margin: 0 20px;
