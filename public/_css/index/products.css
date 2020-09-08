@@ -1,13 +1,8 @@
-main {
-    max-width: 1150px;
-    min-height: 100vh;
-    margin: 0 auto;
-}
 main ul {
+    padding: 0;
     display: grid;
     list-style: none;
-    grid-template-columns: 1fr 1fr 1fr; 
-    margin-top: 100px;   
+    grid-template-columns: 1fr 1fr 1fr;
 }
 main ul li {
     position: relative;
