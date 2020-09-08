@@ -55,13 +55,17 @@
                     <?php echo $checkout ?>
                     <?php echo $not_registered ?>
                         <form action="login.php" method="POST">
-                            <h2>Enter your user</h2>
-                            <input type="text" name="usuario" placeholder="User name" required autofocus>
-                            <input type="password" name="senha" placeholder="Password" required>
-                            <input class="button-hover" type="submit" value="login" title="Submit">
-                            <hr>
-                            <h4>Don't have an account yet?</h4>
-                            <a class="button-hover" href="sign_up.php" title="Sign Up" rel="Sign Up">Sign Up</a>
+                            <div>
+                                <h2>Enter your user</h2>
+                                <label for="usuario">User name</label>
+                                <input type="text" name="usuario" placeholder="Exe: joe" required autofocus>
+                                <label for="senha">Password</label>
+                                <input type="password" name="senha" placeholder="......." required>
+                                <input class="button-hover" type="submit" value="login" title="Submit">
+                                <hr>
+                                <h4>Don't have an account yet?</h4>
+                                <a class="button-hover" href="sign_up.php" title="Sign Up" rel="Sign Up">Sign Up</a>
+                            </div>
                         </form>
                     </div>
                 </div>
