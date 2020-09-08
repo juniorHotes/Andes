@@ -1,14 +1,16 @@
+.login-window form h2 {
+    display: block;
+    margin-bottom: 20px;
+}
 .login-window {
     width: 400px;
     background-color: white;
     padding: 20px;
+    margin: 0 auto;
 }
-.login-window form {
-    display: flex;
-    flex-direction: column;
-}
-.login-window form input, select {
-    margin: 10px 0;
+.login-window form input {
+    width: 100%;
+    margin: 0 0 20px 0;
     padding: 10px;
 }
 .login-window form input[type=submit] {
@@ -20,6 +22,7 @@
     margin-bottom: 30px;
 }
 .login-window form a {
+    display: block;
     margin: 20px 0;
     background: var(--color-button-green);
     color: white;
