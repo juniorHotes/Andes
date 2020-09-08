@@ -48,7 +48,7 @@
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="_css/index/index.css">
-        <link rel="stylesheet" href="_css/login/login_style.css">
+        <link rel="stylesheet" href="_css/login/sign_up.css">
         <title>Andes Coffee - Sign up</title>
     </head>
     <body>
@@ -56,35 +56,65 @@
 
         <main>
             <div class="content">
-                <div class="login-content show-login">
-                    <div class="login-window">
-                        <form action="sign_up.php" method="POST">
-                            <h2>Create your user</h2>
-                            <input type="text" autocomplet name="nomecompleto" placeholder="Full name" required autofocus>
-                            <input type="text" name="endereco" placeholder="Adress" required>
-                            <input type="text" name="complemento" placeholder="Complement">
-                            <input type="text" name="numero" placeholder="Number" required>
+                <div class="signup-window">
 
+                    <h2>Create your user</h2>
+                    <p><span>*</span>All fields are mandatory</p>
+                    <form action="sign_up.php" method="POST">
+
+                        <div>
+                            <label for="nomecompleto">Full name</label>
+                            <input type="text" autocomplet name="nomecompleto" placeholder="" required autofocus>
+
+                            <label for="endereco">Adress</label>
+                            <input type="text" name="endereco" placeholder="" required>
+                            
+                            <label for="complemento">Complement</label>
+                            <input type="text" name="complemento" placeholder="">
+
+                            <label for="numero">Number</label>
+                            <input type="number" name="numero" placeholder="" required>
+                        </div>
+
+                        <div>
+                            <label for="estado">Select your state</label>
                             <select id="estado" required>
                                 <option value>State</option>
                             </select>
 
+                            <label for="cidade">Select your city</label>
                             <select id="cidade" disabled="disabled" required>
                             </select>
+                        
+                            <label for="cep">CEP</label>
+                            <input type="text" name="cep" placeholder="" required>
 
-                            <input type="text" name="cep" placeholder="CEP" required>
-                            <input type="tel" maxlength="14" placeholder="Phone" name="telefone" required>
-                            <input type="email" name="email" placeholder="Email exe: youremail@mail.com" required>
-                            <input type="text" name="usuario" placeholder="User name" required>
-                            <input type="password" name="senha1" placeholder="Password (minimum 8 characters)" required>
-                            <input type="password" name="senha2" placeholder="Repeat the password" required>
-                            <input class="button-hover" type="submit" value="Save">
+                            <label for="telefone">Phone</label>
+                            <input type="tel" maxlength="14" placeholder="" name="telefone" required>
+                        </div>
 
-                            <input type="hidden" name="ddd"     value="">
-                            <input type="hidden" name="state"   value="">
-                            <input type="hidden" name="city"    value="">
-                        </form>
-                    </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" placeholder="Exe: youremail@mail.com" required>
+
+                            <label for="usuario">User name</label>
+                            <input type="text" name="usuario" placeholder="" required>
+
+                            <label for="senha1">Password</label>
+                            <input type="password" name="senha1" placeholder="minimum 8 characters" required>
+
+                            <label for="senha2">Repeat the password</label>
+                            <input type="password" name="senha2" placeholder="" required>
+
+                            <input class="button-hover" type="submit" value="Register">
+
+                        </div>
+
+
+                        <input type="hidden" name="ddd"     value="">
+                        <input type="hidden" name="state"   value="">
+                        <input type="hidden" name="city"    value="">
+                    </form>
                 </div>
             </div>
         </main>
