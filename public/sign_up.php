@@ -45,14 +45,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="_css/index/index.css">
+        <?php require_once("partials/index/head_global.php"); ?>
         <link rel="stylesheet" href="_css/login/sign_up.css">
         <title>Andes Coffee - Sign up</title>
     </head>
     <body>
         <?php require_once("partials/index/header.php"); ?>
+        <?php require_once("partials/index/window_alert.php"); ?>
 
         <main>
             <div class="content">
@@ -121,6 +120,7 @@
                 
         <?php require_once("partials/index/footer.php") ?>
     </body>
+    <script src="js/alert.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/jquery.maskedinput.js"></script>
     <script src="js/login/signup_validation.js"></script>
@@ -134,7 +134,8 @@
             let nome = varr[varr.indexOf(event.target.value)];
             
             if(event.target.value == nome) {
-                alert('Existing user, please choose another name');
+                windowAlert('Existing user, please choose another name');
+                onColosed(userNameInput)
             }
         });
 
