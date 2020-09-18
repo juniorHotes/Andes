@@ -10,7 +10,7 @@
         
         $access = "SELECT * ";
         $access .= "FROM clientes ";
-        $access .= "WHERE usuario IN ('{$username}','{$password}','nivel') ";
+        $access .= "WHERE usuario = '{$username}' AND senha = '{$password}' ";
         
         $logon = mysqli_query($connect, $access);
         
@@ -58,9 +58,9 @@
                             <div>
                                 <h2>Enter your user</h2>
                                 <label for="usuario">User name</label>
-                                <input type="text" name="usuario" placeholder="Exe: joe" required autofocus>
+                                <input type="text" name="usuario" required autofocus>
                                 <label for="senha">Password</label>
-                                <input type="password" name="senha" placeholder="" required>
+                                <input type="password" name="senha" required>
                                 <input class="button-hover" type="submit" value="login" title="Submit">
                                 <hr>
                                 <h4>Don't have an account yet?</h4>
