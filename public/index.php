@@ -27,44 +27,47 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="_css/index/index.css">
+        <?php require_once("partials/index/head_global.php"); ?>
         <link rel="stylesheet" href="_css/index/products.css">
         <title>Andes Coffee</title>
     </head>
+    
     <body>
         <?php require_once("partials/index/header.php"); ?>
-
+        <?php require_once("partials/index/window_alert.php"); ?>
+        
         <main>
-            <ul>
-            <?php
-                if($p_ids != 0) {
-                    while($pr = mysqli_fetch_assoc($query))  {
-            ?>
-                <li>
-                    <a href="product_details.php?product_Id=<?php echo $pr["produtoID"] ?>">
-                        <div class="product-content _hover">
-                            <img width="80" src="<?php echo $pr["imagempequena"] ?>" alt="imagem do produto">
-                            <h3><?php echo $pr["nomeproduto"] ?></h3>
-                            <span><?php echo "USD " . number_format($pr["precounitario"], 2,",",".") ?></span>
-                        </div>
-                    </a> 
-                    <button class="button-heart" value="<?php echo $pr["produtoID"] ?>" title="add favorite">
-                    </button>
-                    <button class="add-to-cart button-hover" value="<?php echo $pr["produtoID"] ?>" title="Add to cart">
-                        Add to cart
-                    </button> 
-                </li> 
-            <?php 
-                    } 
-                } else {
-            ?>
-            </ul>
-                <h1>You have not added any products to favorites</h1>
-            <?php } ?>
+            <div class="content">
+                <ul>
+                <?php
+                    if($p_ids != 0) {
+                        while($pr = mysqli_fetch_assoc($query))  {
+                ?>
+                    <li>
+                        <a href="product_details.php?product_Id=<?php echo $pr["produtoID"] ?>">
+                            <div class="product-content _hover">
+                                <img width="80" src="<?php echo $pr["imagempequena"] ?>" alt="imagem do produto">
+                                <h3><?php echo $pr["nomeproduto"] ?></h3>
+                                <span><?php echo "USD " . number_format($pr["precounitario"], 2,",",".") ?></span>
+                            </div>
+                        </a> 
+                        <button class="button-heart" value="<?php echo $pr["produtoID"] ?>" title="add favorite">
+                        </button>
+                        <button class="add-to-cart button-hover" value="<?php echo $pr["produtoID"] ?>" title="Add to cart">
+                            Add to cart
+                        </button> 
+                    </li> 
+                <?php 
+                        } 
+                    } else {
+                ?>
+                </ul>
+                    <h1>You have not added any products to favorites</h1>
+                <?php } ?>
+            </div>
         </main>        
         <?php require_once("partials/index/footer.php") ?>
+        <script src="js/alert.js"></script>
         <script src="js/index/addToCart.js"></script>
         <script src="js/index/addToFavorite.js"></script>
     </body>
