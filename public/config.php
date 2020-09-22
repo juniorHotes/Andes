@@ -19,9 +19,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="_css/index/index.css">
+        <?php require_once("partials/index/head_global.php"); ?>
         <link rel="stylesheet" href="_css/admin/config.css">
         <?php
             if($config_type == "RegisterNewProduct") {
@@ -42,6 +40,7 @@
     </head>
     <body>
         <?php require_once("partials/index/header.php"); ?>
+        <?php require_once("partials/index/window_alert.php"); ?>
 
         <main>
             <div class="content">
@@ -60,6 +59,7 @@
         </main>    
             
         <?php require_once("partials/index/footer.php") ?>
+        <script src="js/alert.js"></script>
         <script src="js/index/addToCart.js"></script>
         <script src="js/index/addToFavorite.js"></script>
 
