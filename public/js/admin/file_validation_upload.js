@@ -10,14 +10,14 @@ inputFiles.addEventListener("change", function() {
     const file = this.files;
 
     if(file.length < 2) {
-        return alert("You must select two images!")
+        return windowAlert("You must select two images!")
     } else if(file.length > 2) {
-        return alert("You have selected more than two images, select only two images!")
+        return windowAlert("You have selected more than two images, select only two images!")
     }
     previewImage.forEach((_, idx) => {
 
         if(file[idx].size > 500000) {
-            return alert(file[idx].name + ": Must be less than 500 KB!")
+            return windowAlert(file[idx].name + ": Must be less than 500 KB!")
         }
 
         if(file[idx]) {
