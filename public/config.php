@@ -79,17 +79,39 @@
             </script>
         <?php } ?>
 
-        <?php
-            if(isset($success)) {
-                if($config_type == "RegisterNewProduct") {
-                    alertUser($success, "Registered successfully", "Failed to register product");
-                } else if($config_type == "ChangeProduct") {
-                    alertUser($success, "Product successfully changed", "Product change error");
-                } else if($config_type == "RegisterSupplier") {
-                    alertUser($success, "Registered successfully", "Error registering supplier");
+        <script>
+            let success     = parseInt(<?php if(isset($success)) {echo $success;} ?>);
+            let deleted     = parseInt(<?php if(isset($deleted)) {echo $deleted;} ?>);
+            let config_type = "<?php echo $config_type ?>"
+
+            function isSuccess(_success, _error) {
+                if(success == 1) {
+                    windowAlert(_success);
+                } else if(success == 0){
+                    windowAlert(_error);
                 }
             }
-        ?> 
+
+            if(config_type == "RegisterNewProduct") {
+                isSuccess("Registered successfully", "Failed to register product");
+                success == -1;
+            } else if(config_type == "ChangeProduct") {
+                isSuccess("Product successfully changed", "Product change error");
+                success == -1;
+            } else if(config_type == "RegisterSupplier") {
+                isSuccess("Registered successfully", "Error registering supplier");
+                success == -1;
+            }
+            
+            if(deleted == 1) {
+                windowAlert("Product successfully deleted")
+                deleted = -1;
+            } else if(deleted == 0) {
+                windowAlert("It was not possible to delete the product")
+                deleted = -1;
+            }
+
+        </script>
 
         <script>
             const favoriteItems = document.querySelector('#favorite-items');
