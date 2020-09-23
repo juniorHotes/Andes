@@ -1,5 +1,5 @@
 <?php
-    $success = 2;
+    $success = -1;
     $_filesPath = [];
     if(isset($_POST['_nomeproduto'])) {
         
@@ -48,19 +48,10 @@
         $category_query = mysqli_query($connect, $insert_product);
 
         if(!$category_query) {
+            $success = 0;
             die("Unexpected operation error");   
         } else {
             $success = 1;
         }
-
-        function alertUser($value, $suc, $error) {
-            if($value == 1) { 
-                echo "<script> alert('". $suc . "'); </script>";
-            } else if($value == 0) {   
-                echo "<script> alert('". $error . "'); </script>";
-            } 
-        }
-
-
     }
 ?>
