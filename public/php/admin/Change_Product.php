@@ -1,6 +1,8 @@
 <?php 
 
     // Pesquisa de produtos
+    $success = -1;
+    $deleted = -1;
     if(isset($_GET['search'])) {
         $search_value = $_GET['search'];
 
@@ -38,7 +40,7 @@
     } else if(isset($_POST['_produtoID'])) {
         // Alteração de produtos
 
-        $success = 2;
+        
         $_filesPath = [];            
         if(count($_FILES['upload']['name']) > 0) {
 
@@ -87,18 +89,12 @@
         $update_query = mysqli_query($connect, $update); 
 
         if(!$update_query) {
+            $success = 0;
             die("Unexpected operation error");   
         } else {
             $success = 1;
         }
 
-        function alertUser($value, $suc, $error) {
-            if($value == 1) { 
-                echo "<script> alert('". $suc . "'); </script>";
-            } else if($value == 0) {   
-                echo "<script> alert('". $error . "'); </script>";
-            } 
-        }
     } else if(isset($_GET['_delete'])) {
         $ID     = $_GET['_id'];
         $delete = $_GET['_delete'];
@@ -108,7 +104,10 @@
             $result = mysqli_query($connect, $del);
 
             if(!$result) {
+                $deleted = 0;
                 die("Error");
+            } else {
+                $deleted = 1;
             }
         }
     }
