@@ -43,6 +43,7 @@
     <head>
         <?php require_once("partials/index/head_global.php"); ?>
         <link rel="stylesheet" href="_css/login/login_style.css">
+        <link rel="stylesheet" href="_css/responsive/login.css">
         <title>Andes Coffee - login</title>
     </head>
     <body>
