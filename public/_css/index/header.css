@@ -9,20 +9,24 @@ header {
     top: 0;
     z-index: 2;
 }
-header h1 {
-    color: var(--color-text-wheat);
-    font-size: 42px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+header #title {
+    width: 280px;
     margin: 0 16px 0 20px;
-    font-weight: 800;
+}
+header h1 {
+    white-space: nowrap;
+    color: var(--color-text-wheat);
+    font-size: 2.3em;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 header form {
     display: flex;
+    width: 680px;
 }
 header input {
+    width: 100%;
     padding: 10px;
     color: var(--color-text-black);
-    width: 400px;
     border: none;
     outline: none;
     font-weight: 700;
@@ -40,15 +44,17 @@ header p, a {
     color: var(--color-text-wheat);
 }
 /* Buttons */
-#cart-content {
-    position: relative;
-    margin: 0 20px;
-}
 .links-content {
-    margin-right: 20px;
-    height: 50px;
     display: flex;
     flex-direction: row;
+}
+.container-links {
+    margin: 0 8px;
+}
+#cart-content {
+    position: relative;
+}
+#favorite-content {
     position: relative;
 }
 .circle-qdt {
@@ -72,14 +78,34 @@ header p, a {
 #user-content p {
     line-height: 0px;
 }
-#config-content {
-    margin: 0 18px;
-}
-@media screen and (max-width:1090px) {
-    header h1 { 
-        font-size: 42rem;
+@media screen and (max-width:810px) {
+    header #title {
+        width: 100px;
     }
-}
-@media screen and (max-width:1000px) {
-
+    header h1 {
+        white-space: pre-line;
+        font-size: 1.8em;
+        line-height: 30px;
+    }
+    .links-content {
+        width: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 400px;
+        background-color: var(--color-button-brown);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+    .container-links {
+        margin-bottom: 12px;
+    }
+    #favorite-content {
+        margin-top: 10px;
+    }
+    #config-content {
+        margin: 10px 0;
+    }
 }
