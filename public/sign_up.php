@@ -47,6 +47,7 @@
     <head>
         <?php require_once("partials/index/head_global.php"); ?>
         <link rel="stylesheet" href="_css/login/sign_up.css">
+        <link rel="stylesheet" href="_css/responsive/sign_up.css">
         <title>Andes Coffee - Sign up</title>
     </head>
     <body>
