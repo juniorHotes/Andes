@@ -9,37 +9,9 @@
 <html>
     <head>
         <?php require_once("partials/index/head_global.php"); ?>
+        <link rel="stylesheet" href="_css/admin/admin.css">
         <title>Andes Coffee - Config</title>
     </head>
-    <style>
-        main ul {
-            display: grid;
-            list-style: none;
-            grid-template-columns: 1fr 1fr 1fr; 
-            padding: 0;
-        }
-        main ul li {
-            position: relative;
-        }
-        main ul li a .content {
-            width: 360px;
-            height: 110px;
-            margin: 6px; 
-            padding: 10px 20px;
-            background-color: var(--color-button-green);
-        }
-        main ul li a {
-            text-decoration: none;
-        }
-        main ul li h2 {
-            margin: 8px 0;
-            line-height: 18px;
-            color: var(--color-text-black);
-            text-align: center;
-            line-height: 70px;
-            color: white;
-        }
-    </style>
     <body>
         <?php require_once("partials/index/header.php"); ?>
 
@@ -48,22 +20,17 @@
                 <ul>
                     <li>
                         <a href="config.php?_configType=RegisterNewProduct">
-                            <div class="content _hover">
+                            <div class="content-btn _hover">                                
+                                <img width="150px" src="assets/configuracoes - large.svg" alt="Icon config">
                                 <h2>Register new product</h2>
                             </div>
                         </a> 
                     </li> 
                     <li>
                         <a href="config.php?_configType=ChangeProduct">
-                            <div class="content _hover">
+                            <div class="content-btn _hover">
+                                <img width="150px" src="assets/configuracoes - large.svg" alt="Icon config">
                                 <h2>Change product</h2>
-                            </div>
-                        </a> 
-                    </li> 
-                    <li>
-                        <a href="config.php?_configType=RegisterSupplier">
-                            <div class="content _hover">
-                                <h2>Register supplier</h2>
                             </div>
                         </a> 
                     </li> 
