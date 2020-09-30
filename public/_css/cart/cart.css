@@ -8,13 +8,13 @@ main h1 {
 }
 .product-details {
     width: 100%;
-    height: 110px;
+    min-height: 110px;
     background-color: white;
     padding: 10px 20px;
     margin: 0 auto;
     border-bottom: 1px solid #ddd;
     display: grid;
-    grid-template-columns: 100px 1fr 1fr;
+    grid-template-columns: 100px 1fr 100px;
     align-items: center;
 }
 .item1, .item2, .item3{
