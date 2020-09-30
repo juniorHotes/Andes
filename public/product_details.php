@@ -27,6 +27,7 @@
     <head>
         <?php require_once("partials/index/head_global.php"); ?>
         <link rel="stylesheet" href="_css/product_details/product_details.css">
+        <link rel="stylesheet" href="_css/responsive/product_details.css">
         <title>Andes - Product details</title>
     </head>
     <body>
