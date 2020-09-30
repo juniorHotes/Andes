@@ -13,6 +13,7 @@
     <head>
         <?php require_once("partials/index/head_global.php"); ?>
         <link rel="stylesheet" href="_css/cart/cart.css">
+        <link rel="stylesheet" href="_css/responsive/cart.css">
         <title>Andes - you cart</title>
     </head>
     <body>
