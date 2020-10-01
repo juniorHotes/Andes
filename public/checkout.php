@@ -110,6 +110,7 @@
         <?php require_once("partials/index/footer.php") ?>
     </body>
     <script src="js/index/addToCart.js"></script>
+    <script src="js/index/getFavorite.js"></script>
     <script>
         const inputRadio = document.querySelectorAll('input[type=radio]')
 
@@ -132,15 +133,7 @@
 
 
     </script>
-    <script>
-        const favoriteItems = document.querySelector('#favorite-items');
-        
-        if (localStorage.getItem("favorites") != null) {
-            let fItems = localStorage.getItem("favorites").split(',');
-            favoriteItems.innerHTML = fItems.length;
-            favoriteItems.parentElement.setAttribute("href", "index.php?favorites=" + fItems);
-        }
-    </script>
+    
 </html>
 
 <?php mysqli_close($connect); ?>

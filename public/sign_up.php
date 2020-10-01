@@ -126,6 +126,7 @@
     <script src="js/jquery.maskedinput.js"></script>
     <script src="js/login/signup_validation.js"></script>
     <script src="js/index/addToCart.js"></script>
+    <script src="js/index/getFavorite.js"></script>
     <script type="text/javascript">
         const userNameInput = document.querySelector('input[name=usuario]')        
         let varr = <?php echo json_encode($users) ?>;
@@ -144,15 +145,6 @@
             setTimeout(() => {
                 window.location = "login.php"
             }, 2000);
-        }
-    </script>
-    <script>
-        const favoriteItems = document.querySelector('#favorite-items');
-
-        if (localStorage.getItem("favorites") != null) {
-            let fItems = localStorage.getItem("favorites").split(',');
-            favoriteItems.innerHTML = fItems.length;
-            favoriteItems.parentElement.setAttribute("href", "index.php?favorites=" + fItems);
         }
     </script>
 </html>

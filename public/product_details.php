@@ -60,15 +60,7 @@
         
         <?php require_once("partials/index/footer.php") ?>
         <script src="js/index/addToCart.js"></script>
-        <script>
-            const favoriteItems = document.querySelector('#favorite-items');
-            
-            if (localStorage.getItem("favorites") != null) {
-                let fItems = localStorage.getItem("favorites").split(',');
-                favoriteItems.innerHTML = fItems.length;
-                favoriteItems.parentElement.setAttribute("href", "index.php?favorites=" + fItems);
-            }
-        </script>
+        <script src="js/index/getFavorite.js"></script>
     </body>
 </html>
 

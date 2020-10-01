@@ -62,7 +62,7 @@
         <?php require_once("partials/index/footer.php") ?>
         <script src="js/alert.js"></script>
         <script src="js/index/addToCart.js"></script>
-        <script src="js/index/addToFavorite.js"></script>
+        <script src="js/index/getFavorite.js"></script>
 
         <?php if($config_type == "RegisterNewProduct" || isset($_GET['_change'])) { ?>
             <script src="js/admin/file_validation_upload.js"></script>
@@ -112,16 +112,6 @@
                 deleted = -1;
             }
 
-        </script>
-
-        <script>
-            const favoriteItems = document.querySelector('#favorite-items');
-
-            if (localStorage.getItem("favorites") != null) {
-                let fItems = localStorage.getItem("favorites").split(',');
-                favoriteItems.innerHTML = fItems.length;
-                favoriteItems.parentElement.setAttribute("href", "index.php?favorites=" + fItems);
-            }
         </script>
     </body>
 </html>
