@@ -14,14 +14,22 @@ productElement.forEach((element) => {
         if (favoriteds[isFav] != prId) {
             element.classList.add("favorited")
             favoriteds.push(prId)
+
+            localStorage.setItem("favorites", favoriteds)
         } else {
             favoriteds.splice(isFav, 1)
             element.classList.remove("favorited")
+
+            if (favoriteds.length > 0) {
+                localStorage.setItem("favorites", favoriteds)
+            } else {
+                localStorage.removeItem('favorites')
+            }
         }
 
         favorites.innerHTML = favoriteds.length
-        localStorage.setItem("favorites", favoriteds)
-        favorites.parentElement.setAttribute("href", "index.php?favorites=" + favoriteds)     
+        favorites.parentElement.setAttribute("href", "index.php?favorites=" + favoriteds)
+        
     })
 })
 
@@ -43,4 +51,4 @@ function getFavorites() {
         }
     })
 }
-//localStorage.removeItem('favorites')
+// localStorage.removeItem('favorites')
