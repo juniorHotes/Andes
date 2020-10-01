@@ -2,15 +2,13 @@
 Andes Coffee é uma loja fictícia focada na venda de produtos relacionados a cafeteria,  criada para exercer conhecimentos sobre as tecnologias usadas neste projeto.
 
 <p style="display:flex;justify-content:center;aling-items:center">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina inicial.png" width="100px">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina inicial.png" width="100px">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina inicial.png" width="100px">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina inicial.png" width="100px">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina inicial.png" width="100px">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina inicial.png" width="100px">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina inicial.png" width="100px">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina inicial.png" width="100px">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina inicial.png" width="100px">
+  <img alt="Imagem" src="splash/index-php.png" width="100px">
+  <img alt="Imagem" src="splash/cart-php.png" width="100px">
+  <img alt="Imagem" src="splash/login-php.png" width="100px">
+  <img alt="Imagem" src="splash/sign-up-php.png" width="100px">
+  <img alt="Imagem" src="splash/register-php.png" width="100px">
+  <img alt="Imagem" src="splash/sc-change-php.png" width="100px">
+  <img alt="Imagem" src="splash/change-php.png" width="100px">
 </p>
 
 ## Funcionalidades
@@ -42,7 +40,7 @@ Desenvolvido com as seguintes tecnologias:
 
 - [PHP](https://www.php.net/manual/pt_BR/intro-whatis.php)
 - [MySql](https://www.mysql.com/)
-- [XAMPP] (https://www.apachefriends.org/)
+- [XAMPP](https://www.apachefriends.org/pt_br/index.html)
 - [jQuery](https://jquery.com/)
 
 ### outros 
