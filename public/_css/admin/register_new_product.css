@@ -1,9 +1,10 @@
 .content {
+    width: 100%;
     position: relative;
 }
 .content form div#form-content{
     display: grid;
-    grid-template-columns: 460px 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 .header_content {
