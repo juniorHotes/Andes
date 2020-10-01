@@ -40,6 +40,11 @@
         
         <main>
             <div class="content">
+                <?php 
+                    if($query->num_rows == 0) {
+                        echo ("<h1 style='text-align:center'>No results</h1>");
+                    }
+                ?>
                 <ul>
                 <?php
                     if($p_ids != 0) {
