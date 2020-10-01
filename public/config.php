@@ -21,6 +21,7 @@
     <head>
         <?php require_once("partials/index/head_global.php"); ?>
         <link rel="stylesheet" href="_css/admin/config.css">
+
         <?php
             if($config_type == "RegisterNewProduct") {
                 echo "<link rel='stylesheet' href='_css/admin/register_new_product.css'>";
@@ -36,7 +37,7 @@
                 echo "<title>Andes Coffee - Register Supplier</title>";
             }
         ?> 
-
+        <link rel="stylesheet" href="_css/responsive/admin.css">
     </head>
     <body>
         <?php require_once("partials/index/header.php"); ?>
