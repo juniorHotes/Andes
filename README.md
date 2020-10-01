@@ -42,7 +42,7 @@ Desenvolvido com as seguintes tecnologias:
 
 - [PHP](https://www.php.net/manual/pt_BR/intro-whatis.php)
 - [MySql](https://www.mysql.com/)
-- [XAMPP] (https://www.apachefriends.org/pt_br/index.html)
+- [XAMPP] (https://www.apachefriends.org/)
 - [jQuery](https://jquery.com/)
 
 ### outros 
