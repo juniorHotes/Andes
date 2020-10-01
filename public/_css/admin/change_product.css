@@ -1,3 +1,6 @@
+.content {
+    width: 100%;
+}
 /* Pesquisa de produto */
 .search-container {
     width: 450px;
@@ -18,6 +21,10 @@
 }
 
 /* Tabela de produtos 'Search result' */
+#table-container {
+    overflow: auto;
+    max-height: 500px;
+}
 #table-container table {
     width: 100%;
     margin-top: 20px;
@@ -26,7 +33,7 @@
     background-color: var(--color-button-green);
     color: white;
     position: sticky;
-    top: 89px;
+    top: -1px;
 }
 #table-container table, tr, td {
     border: 1px solid #bebebe;
@@ -56,7 +63,7 @@
 }
 .content form div#form-content{
     display: grid;
-    grid-template-columns: 460px 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 .header_content {
