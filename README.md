@@ -2,13 +2,13 @@
 Andes Coffee é uma loja fictícia focada na venda de produtos relacionados a cafeteria,  criada para exercer conhecimentos sobre as tecnologias usadas neste projeto.
 
 <p style="display:flex;justify-content:center;aling-items:center">
-  <img alt="Imagem" src="splashs/index-php.png" width="100px">
-  <img alt="Imagem" src="splashs/cart-php.png" width="100px">
-  <img alt="Imagem" src="splashs/login-php.png" width="100px">
-  <img alt="Imagem" src="splashs/sign-up-php.png" width="100px">
-  <img alt="Imagem" src="splashs/register-php.png" width="100px">
-  <img alt="Imagem" src="splashs/sc-change-php.png" width="100px">
-  <img alt="Imagem" src="splashs/change-php.png" width="100px">
+  <img alt="Imagem" src="splashs/index-php.png" width="30%">
+  <img alt="Imagem" src="splashs/cart-php.png" width="30%">
+  <img alt="Imagem" src="splashs/login-php.png" width="30%">
+  <img alt="Imagem" src="splashs/sign-up-php.png" width="30%">
+  <img alt="Imagem" src="splashs/register-php.png" width="30%">
+  <img alt="Imagem" src="splashs/sc-change-php.png" width="30%">
+  <img alt="Imagem" src="splashs/change-php.png" width="30%">
 </p>
 
 ## Funcionalidades
