@@ -88,24 +88,16 @@ header p, a {
         line-height: 30px;
     }
     .links-content {
-        width: 50px;
-        padding-left: 30px;
-        padding-right: 30px;
-        margin-top: 400px;
+        padding: 10px;
         background-color: var(--color-button-brown);
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
+        justify-content: space-evenly;
+        position: fixed;
+        bottom: 0;
+        left: 0%;
+        right: 0%;
     }
-    .container-links {
-        margin-bottom: 12px;
-    }
-    #favorite-content {
-        margin-top: 10px;
-    }
-    #config-content {
-        margin: 10px 0;
+    footer {
+        height: 150px;
     }
 }
