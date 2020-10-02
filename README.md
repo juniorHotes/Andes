@@ -1,5 +1,5 @@
 # Andes Coffee
-Andes Coffee é uma loja fictícia focada na venda de produtos relacionados a cafeteria, criada para exercer conhecimentos sobre as tecnologias usadas neste projeto focando principalmente o back end.
+Andes Coffee is a fictional store focused on selling products related to cafeteria, created to exercise knowledge about the technologies used in this project focusing mainly on the back end.
 
 <p style="display:flex;justify-content:center;aling-items:center">
   <img alt="Imagem" src="splashs/index-php.png" width="30%">
@@ -11,40 +11,39 @@ Andes Coffee é uma loja fictícia focada na venda de produtos relacionados a ca
   <img alt="Imagem" src="splashs/change-php.png" width="30%">
 </p>
 
-## Funcionalidades
-#### Página inicial
-- Listagem de produtos.
-- Pesquisa de produtos.
-- Adicionar ou remover produtos aos favoritos.
-- Filtragem de favoritos. 
-- Adicionar produtos ao carrinho.
-#### Página do carrinho 
-- Remover produtos do carrinho e possibilita alterar a quantidade de cada produto fazendo a soma do valor sobre a quantidade desejada somando o valor total dos produtos.
-#### Página de detalhes
-- Apresentar uma visão mais detalhada sobre o produto e adicionar ao carrinho.
-#### Página de login
-- Possibilita um usuário já cadastrado se conectar com a loja, se o usuário for um administrador as funcionalidades de cadastro e alteração de produtos ficará disponível.
-#### Página de cadastro de usuário
-- Um novo usuário poderá ser cadastrado preenchendo os quesitos exigidos.
-- Validação de nome de usuário e senha, um nome de usuário já existente não será aceito e a senha deverá ser maior ou igual a oito dígitos.
-#### Página de administrador 
-- Cadastro de um novo produto possibilitando fazer upload de imagens do mesmo.
-- Alteração de produtos possibilita pesquisar pelo produto desejado por id, código de barras ou descrição, faz listagem de todos os produtos onde poderão ser alteradas todas as informações do produto selecionado inclusive as imagens.
-#### Página de pagamento
-- Apenas front end, cartão de crédito e boleto.
+## Functionalities
+#### Home page
+- List of products.
+- Product search.
+- Add or remove products to favorites.
+- Filtering favorites.
+- Add products to the cart.
+#### Cart page
+- Remove products from the cart and make it possible to change the quantity of each product by adding the value on the desired quantity adding the total value of the products.
+#### Details page
+- Present a more detailed view of the product and add it to the cart.
+#### Login page
+- Enables an already registered user to connect with the store, if the user is an administrator, the registration and product change functionality will be available.
+#### User registration page
+- A new user can be registered by filling out the required requirements.
+- Username and password validation, an existing username will not be accepted and the password must be greater than or equal to eight digits.
+#### Admin page
+- Registration of a new product making it possible to upload images of it.
+- Alteration of products makes it possible to search for the desired product by id, barcode or description, lists all products where all information of the selected product, including images, can be altered.
+#### Payment page
+- Front end only, credit card and boleto.
 
-
-## Tecnologias
-Desenvolvido com as seguintes tecnologias:
+## Technologies
+Developed with the following technologies:
 
 - [PHP7](https://www.php.net/manual/pt_BR/intro-whatis.php)
 - [MySql](https://www.mysql.com/)
 - [XAMPP](https://www.apachefriends.org/pt_br/index.html)
 - [jQuery](https://jquery.com/)
 
-### outros 
+### Others
 
-- Utilização da API do IBGE para inserção de busca por estados e municípios.
+- Use of the IBGE API to insert search by states and municipalities.
 
-#### Licensa 
-- livre para projetos de estudos.
+#### License
+- free for study projects.
