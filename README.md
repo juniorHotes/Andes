@@ -1,5 +1,5 @@
 # Andes Coffee
-Andes Coffee é uma loja fictícia focada na venda de produtos relacionados a cafeteria,  criada para exercer conhecimentos sobre as tecnologias usadas neste projeto.
+Andes Coffee é uma loja fictícia focada na venda de produtos relacionados a cafeteria, criada para exercer conhecimentos sobre as tecnologias usadas neste projeto focando principalmente o back end.
 
 <p style="display:flex;justify-content:center;aling-items:center">
   <img alt="Imagem" src="splashs/index-php.png" width="30%">
@@ -27,7 +27,6 @@ Andes Coffee é uma loja fictícia focada na venda de produtos relacionados a ca
 #### Página de cadastro de usuário
 - Um novo usuário poderá ser cadastrado preenchendo os quesitos exigidos.
 - Validação de nome de usuário e senha, um nome de usuário já existente não será aceito e a senha deverá ser maior ou igual a oito dígitos.
-- Seleção de cidade e estado através a API do IBGE.
 #### Página de administrador 
 - Cadastro de um novo produto possibilitando fazer upload de imagens do mesmo.
 - Alteração de produtos possibilita pesquisar pelo produto desejado por id, código de barras ou descrição, faz listagem de todos os produtos onde poderão ser alteradas todas as informações do produto selecionado inclusive as imagens.
@@ -38,7 +37,7 @@ Andes Coffee é uma loja fictícia focada na venda de produtos relacionados a ca
 ## Tecnologias
 Desenvolvido com as seguintes tecnologias:
 
-- [PHP](https://www.php.net/manual/pt_BR/intro-whatis.php)
+- [PHP7](https://www.php.net/manual/pt_BR/intro-whatis.php)
 - [MySql](https://www.mysql.com/)
 - [XAMPP](https://www.apachefriends.org/pt_br/index.html)
 - [jQuery](https://jquery.com/)
